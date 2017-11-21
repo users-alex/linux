@@ -1,15 +1,16 @@
 #
 # system setup
 #
+ID=`id -nu`
 [ -L /home/webhome ] && sudo rm -f /home/webhome &
 [ -d /home/webhome ] && sudo mv /home/webhome /home/webold && sudo rm -rf /home/webold &
 sudo ln -s $HOME /home/webhome
 #
 # install packages
 #
-echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-get update && sudo apt-get install -y screen htop sysstat nmap zsh wamerican spell ispell pandoc gcsfuse &
+#echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+#curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+#sudo apt-get update && sudo apt-get install -y screen htop sysstat nmap zsh wamerican spell ispell pandoc gcsfuse &
 #xfce4 xfce4-goodies tightvncserver
 #golang-go
 #
@@ -35,3 +36,7 @@ sudo apt-get update && sudo apt-get install -y screen htop sysstat nmap zsh wame
 # disable google statistic gathering
 #
 gcloud config set disable_usage_reporting true
+sudo chown ${ID}: /dev/fuse
+[ ! -d /netdisk ] && mkdir /netdisk
+sudo chown ${ID}: /netdisk
+gcsfuse alex2006hw-cloudshell /netdisk

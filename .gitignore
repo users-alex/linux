@@ -2,6 +2,7 @@
 .cache
 .cloudshell
 .config
+.gsutil*
 .npm
 .nvm
 .orion
