@@ -9,7 +9,6 @@ README-cloudshell.txt
 .ssh
 .viminfo
 .vimshell
-work
 .yarn
 .yarnrc
 .bash_history
@@ -27,11 +26,18 @@ work
 .pki
 .node-gyp
 .fontconfig
-.atom
+.atom*
 .node_repl_history
 .wget-hsts
 .ethereum*
 .standard-cache*
+.babel.json*
+.elm*
+.gem*
+.jspm*
+.v8flags*
+.webpack*
 npm-debug.log*
 eval
 Applications
+work

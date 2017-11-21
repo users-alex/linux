@@ -117,6 +117,10 @@ fi
 if [ -f "/google/devshell/bashrc.google" ]; then
   source "/google/devshell/bashrc.google"
 fi
+
+if [ -f "$HOME/.bash_env" ]; then
+  source "$HOME/.bash_env"
+fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
    PATH="$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
@@ -126,7 +130,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[[ -s "/home/usertoken_com/.gvm/scripts/gvm" ]] && source "/home/usertoken_com/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
