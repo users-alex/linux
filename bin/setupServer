@@ -1,6 +1,7 @@
 #
 # system setup
 #
+[ -f $HOME/.secrets ] && source "$HOME/.secrets"
 ID=`id -nu`
 [ -L /home/webhome ] && sudo rm -f /home/webhome &
 [ -d /home/webhome ] && sudo mv /home/webhome /home/webold && sudo rm -rf /home/webold &
@@ -39,4 +40,4 @@ gcloud config set disable_usage_reporting true
 sudo chown ${ID}: /dev/fuse
 [ ! -d /netdisk ] && mkdir /netdisk
 sudo chown ${ID}: /netdisk
-gcsfuse alex2006hw-cloudshell /netdisk
+gcsfuse $NETDISK /netdisk
