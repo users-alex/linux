@@ -38,6 +38,7 @@ README-cloudshell.txt
 .jspm*
 .v8flags*
 .webpack*
+**/node_modules
 npm-debug.log*
 eval
 Applications
