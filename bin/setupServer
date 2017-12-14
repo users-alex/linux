@@ -13,7 +13,8 @@ curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo ap
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
 echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
-sudo apt-get update && sudo apt-get install -y screen htop sysstat nmap zsh wamerican spell ispell pandoc gcsfuse cf-cli &
+sudo apt-get update && sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican \
+  spell ispell pandoc gcsfuse cf-cli &
 #xfce4 xfce4-goodies tightvncserver
 #golang-go
 #
