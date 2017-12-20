@@ -134,6 +134,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export GOROOT=$HOME/go
+export GOPATH=$HOME/work/golang
+export GOBIN=$HOME/bin
 export PATH=$PATH:$GOROOT/bin
 
 #[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
