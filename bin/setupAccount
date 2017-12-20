@@ -8,8 +8,10 @@ CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 \rm -rf ~/.npm;mkdir -p /tmp/$CACHEDIR/npm;ln -s /tmp/$CACHEDIR/npm ~/.npm
 \rm -rf ~/.node-gyp;mkdir -p /tmp/$CACHEDIR/node-gyp;ln -s /tmp/$CACHEDIR/node-gyp ~/.node-gyp
 # install gvm
-\rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-\rm -rf ~/.gvm/archive;mkdir -p /tmp/$CACHEDIR/gvm/archive;ln -s /tmp/$CACHEDIR/gvm/archive ~/.gvm/archive
+#\rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+#\rm -rf ~/.gvm/archive;mkdir -p /tmp/$CACHEDIR/gvm/archive;ln -s /tmp/$CACHEDIR/gvm/archive ~/.gvm/archive
+wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
+tar zxf go1.9.2.linux-amd64.tar.gz
 # install vim plug-ins
 \rm -rf ~/.vim;mkdir -p ~/.vim/autoload ~/.vim/bundle 
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim &

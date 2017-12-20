@@ -13,6 +13,7 @@ README-cloudshell.txt
 .yarn
 .yarnrc
 .bash_history
+.conda*
 .ipfs
 .ICEauthority
 .Xauthority
@@ -43,4 +44,5 @@ npm-debug.log*
 eval
 Applications
 work
+go
 .cf

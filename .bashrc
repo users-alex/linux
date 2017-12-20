@@ -98,6 +98,9 @@ fi
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -130,9 +133,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+
+#[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
-
-[[ -s "/home/usertoken_com/.gvm/scripts/gvm" ]] && source "/home/usertoken_com/.gvm/scripts/gvm"
