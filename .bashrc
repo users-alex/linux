@@ -126,7 +126,7 @@ if [ -f "$HOME/.bash_env" ]; then
 fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-   PATH="$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
+   PATH="$HOME/bin:$HOME/.linuxbrew/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 export NVM_DIR="$HOME/.nvm"
@@ -137,6 +137,9 @@ export GOROOT=$HOME/go
 export GOPATH=$HOME/work/golang
 export GOBIN=$HOME/bin
 export PATH=$PATH:$GOROOT/bin
+
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 #[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # Run twolfson/sexy-bash-prompt

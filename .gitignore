@@ -39,10 +39,12 @@ README-cloudshell.txt
 .jspm*
 .v8flags*
 .webpack*
+.cf
+.linuxbrew
 **/node_modules
 npm-debug.log*
 eval
 Applications
 work
 go
-.cf
+tmp
