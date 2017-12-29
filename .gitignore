@@ -48,3 +48,6 @@ Applications
 work
 go
 tmp
+.pm2
+.wireshark
+mininet
