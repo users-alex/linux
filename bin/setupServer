@@ -14,7 +14,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
 echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
 sudo apt-get update && sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican \
-  spell ispell pandoc gcsfuse cf-cli python-pip build-essential python-dev lm-sensors &
+  spell ispell pandoc gcsfuse cf-cli python-pip build-essential python-dev lm-sensors libnotify-bin &
 #sudo pip install psutil logutils bottle batinfo https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz zeroconf netifaces pymdstat influxdb elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard
 sudo pip install glances
 #xfce4 xfce4-goodies tightvncserver
@@ -38,6 +38,10 @@ sudo pip install glances
 #ipfs config --json Gateway.Writable true
 #ipfs config --json Gateway.HTTPHeaders.Access-Control-Expose-Headers '["Ipfs-Hash"]'
 #ipfs daemon & # run ipfs daemon in background
+#
+# install bluemix
+( cd /tmp;wget https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64;tar zxf /tmp/linux64 )
+( cd /tmp/Bluemix_CLI;sudo ./install_bluemix_cli )
 #
 # disable google statistic gathering
 #

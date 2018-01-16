@@ -18,9 +18,9 @@ CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 # tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
 #
 # install vim plug-ins
-\rm -rf ~/.vim;mkdir -p ~/.vim/autoload ~/.vim/bundle 
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim &
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh &
+#\rm -rf ~/.vim;mkdir -p ~/.vim/autoload ~/.vim/bundle 
+#curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim &
+#curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh &
 #
 # install Applications
 #

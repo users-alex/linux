@@ -50,4 +50,8 @@ go
 tmp
 .pm2
 .wireshark
+.forever
+.bluemix/
+.bundle/
 mininet
+hack
