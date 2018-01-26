@@ -53,5 +53,6 @@ tmp
 .forever
 .bluemix/
 .bundle/
+.electron/
 mininet
 hack

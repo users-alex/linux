@@ -144,4 +144,3 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 #[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
-

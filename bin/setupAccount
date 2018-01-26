@@ -10,6 +10,7 @@ CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 # install gvm
 #\rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 #\rm -rf ~/.gvm/archive;mkdir -p /tmp/$CACHEDIR/gvm/archive;ln -s /tmp/$CACHEDIR/gvm/archive ~/.gvm/archive
+# go get github.com/karalabe/xgo  # go cross compiler
 #
 # install glances (moved to setupServer)
 #curl -L https://raw.githubusercontent.com/nicolargo/glancesautoinstall/master/install.sh | sudo /bin/bash
