@@ -55,6 +55,7 @@ tmp
 .bundle/
 .electron/
 .ccache
+.bitmonero
 mining
 mininet
 hack
