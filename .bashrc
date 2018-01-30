@@ -142,7 +142,7 @@ export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 [[ -s "/home/alex/.gvm/scripts/gvm" ]] && source "/home/alex/.gvm/scripts/gvm"
-
+[[ -f "$HOME/.motd" ]] && cat $HOME/.motd
 #[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
