@@ -1,1 +1,0 @@
-~/bin/cpuminer -D -a x11 -o stratum+tcp://us.multipool.us:3375 -u alex2006hw.1 -p x

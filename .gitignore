@@ -54,5 +54,7 @@ tmp
 .bluemix/
 .bundle/
 .electron/
+.ccache
+mining
 mininet
 hack
