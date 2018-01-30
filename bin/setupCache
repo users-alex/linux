@@ -1,5 +1,8 @@
 #
-# Cache setup
+# account setup
 #
 CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 \rm -rf ~/.cache;\rm -rf /tmp/$CACHEDIR;mkdir -p /tmp/$CACHEDIR;ln -s /tmp/$CACHEDIR ~/.cache
+\rm -rf ~/.npm;mkdir -p /tmp/$CACHEDIR/npm;ln -s /tmp/$CACHEDIR/npm ~/.npm
+\rm -rf ~/.node-gyp;mkdir -p /tmp/$CACHEDIR/node-gyp;ln -s /tmp/$CACHEDIR/node-gyp ~/.node-gyp
+\rm -rf ~/.ccache;mkdir -p /tmp/$CACHEDIR/ccache;ln -s /tmp/$CACHEDIR/ccache ~/.ccache
