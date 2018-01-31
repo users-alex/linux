@@ -58,6 +58,7 @@ tmp
 .bitmonero
 .motd
 .sudo_as_admin_successful
+.docker
 mining
 mininet
 hack
