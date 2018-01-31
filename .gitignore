@@ -57,6 +57,7 @@ tmp
 .ccache
 .bitmonero
 .motd
+.sudo_as_admin_successful
 mining
 mininet
 hack
