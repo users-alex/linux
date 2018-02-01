@@ -57,6 +57,8 @@ tmp
 .ccache
 .bitmonero
 .motd
+.usrcoin
+.zcash-params
 .sudo_as_admin_successful
 .docker
 mining
