@@ -18,31 +18,31 @@ echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 #
 sudo apt-get update && sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
-  libreadline6 libreadline6-dev docker-ce bison \
-  spell ispell pandoc gcsfuse cf-cli python-pip build-essential python-dev lm-sensors libnotify-bin ccache &
-#sudo pip install psutil logutils bottle batinfo https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz zeroconf netifaces pymdstat influxdb elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard
+  libreadline6 libreadline6-dev docker-ce bison apt-transport-https ca-certificates curl software-properties-common \
+  spell ispell pandoc gcsfuse cf-cli python-pip build-essential python-dev lm-sensors libnotify-bin ccache docker-ce \
+  xfce4 xfce4-goodies tightvncserver golang-go &
+sudo pip install psutil logutils bottle batinfo https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz zeroconf netifaces pymdstat influxdb elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard
 sudo pip install glances
-#xfce4 xfce4-goodies tightvncserver
-#golang-go
+sudo usermod -aG docker $(whoami)
 #
 # ipfs
 #
-#export PATH=$PATH:$GOROOT/bin:$GOPATH/
-#export GOPATH=$HOME/go
-#wget https://dist.ipfs.io/go-ipfs/v0.4.10/go-ipfs_v0.4.10_linux-386.tar.gz
-#tar xvfz go-ipfs_v0.4.10_linux-386.tar.gz
-#sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
-#\rm -rf go-ipfs_v0.4.10_linux-386.tar.gz go-ipfs &
+export PATH=$PATH:$GOROOT/bin:$GOPATH/
+export GOPATH=$HOME/go
+wget https://dist.ipfs.io/go-ipfs/v0.4.10/go-ipfs_v0.4.10_linux-386.tar.gz
+tar xvfz go-ipfs_v0.4.10_linux-386.tar.gz
+sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
+\rm -rf go-ipfs_v0.4.10_linux-386.tar.gz go-ipfs &
 #
-#ipfs init
-#ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
-#ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
-#ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST"]'
-#ipfs config --json Gateway.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
-#ipfs config --json Gateway.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST", "OPTIONS"]'
-#ipfs config --json Gateway.Writable true
-#ipfs config --json Gateway.HTTPHeaders.Access-Control-Expose-Headers '["Ipfs-Hash"]'
-#ipfs daemon & # run ipfs daemon in background
+ipfs init
+ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST"]'
+ipfs config --json Gateway.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
+ipfs config --json Gateway.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "GET", "POST", "OPTIONS"]'
+ipfs config --json Gateway.Writable true
+ipfs config --json Gateway.HTTPHeaders.Access-Control-Expose-Headers '["Ipfs-Hash"]'
+ipfs daemon & # run ipfs daemon in background
 #
 # install bluemix
 ( cd /tmp;wget https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64;tar zxf /tmp/linux64 )

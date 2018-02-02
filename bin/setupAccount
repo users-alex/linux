@@ -2,19 +2,19 @@
 # account setup
 #
 CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
-\rm -rf ~/.cache;\rm -rf /tmp/$CACHEDIR;mkdir -p /tmp/$CACHEDIR;ln -s /tmp/$CACHEDIR ~/.cache
+\rm -rf ~/.cache;\rm -rf /tmp/${CACHEDIR}/cache;mkdir -p /tmp/${CACHEDIR}/cache;ln -s /tmp/${CACHEDIR}/cache ~/.cache
 # install nvm
-\rm -rf ~/.npm;mkdir -p /tmp/$CACHEDIR/npm;ln -s /tmp/$CACHEDIR/npm ~/.npm
-\rm -rf ~/.node-gyp;mkdir -p /tmp/$CACHEDIR/node-gyp;ln -s /tmp/$CACHEDIR/node-gyp ~/.node-gyp
-\rm -rf ~/.ccache;mkdir -p /tmp/$CACHEDIR/ccache;ln -s /tmp/$CACHEDIR/ccache ~/.ccache
-\rm -rf ~/.bitmonero;mkdir -p /tmp/$CACHEDIR/bitmonero;ln -s /tmp/$CACHEDIR/bitmonero ~/.bitmonero
+\rm -rf ~/.npm;mkdir -p /.cache/npm;ln -s /.cache/npm ~/.npm
+\rm -rf ~/.node-gyp;mkdir -p /.cache/node-gyp;ln -s /.cache/node-gyp ~/.node-gyp
+\rm -rf ~/.ccache;mkdir -p /.cache/ccache;ln -s /.cache/ccache ~/.ccache
+\rm -rf ~/.bitmonero;mkdir -p /.cache/bitmonero;ln -s /.cache/bitmonero ~/.bitmonero
 # install gvm nvm
 \rm -rf ~/.nvm;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash &
 \rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-\rm -rf ~/.gvm/archive;mkdir -p /tmp/$CACHEDIR/gvm/archive;ln -s /tmp/$CACHEDIR/gvm/archive ~/.gvm/archive
-# go get github.com/karalabe/xgo  # go cross compiler
-# wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
-# tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
+\rm -rf ~/.gvm/archive;mkdir -p /.cache/gvm/archive;ln -s /.cache/gvm/archive ~/.gvm/archive
+go get github.com/karalabe/xgo  # go cross compiler
+wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
+tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
 #
 # install vim plug-ins
 \rm -rf ~/.vim;mkdir -p ~/.vim/autoload ~/.vim/bundle 
@@ -23,7 +23,7 @@ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.s
 #
 # install Applications
 #
-#\rm -rf ~/Applications;git clone https://github.com/users-alex/applications-linux.git /tmp/$CACHEDIR/Applications;ln -s /tmp/$CACHEDIR/Applications ~/Applications &
+#\rm -rf ~/Applications;git clone https://github.com/users-alex/applications-linux.git /.cache/Applications;ln -s /.cache/Applications ~/Applications &
 #
 # install cloud-foundry
 # curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
