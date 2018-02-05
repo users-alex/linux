@@ -147,3 +147,5 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
+
+[[ -s "/home/usrcoin/.gvm/scripts/gvm" ]] && source "/home/usrcoin/.gvm/scripts/gvm"
