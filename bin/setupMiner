@@ -1,4 +1,4 @@
-echo deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial main | sudo tee /etc/apt/sources.list
+echo deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial main | sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D46F45428842CE5E
 sudo apt-get update
 sudo apt-get -y install ccache git libboost-system1.58.0 libboost-filesystem1.58.0 libboost-program-options1.58.0 libboost-thread1.58.0 libboost-chrono1.58.0 \
