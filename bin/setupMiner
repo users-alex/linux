@@ -10,7 +10,7 @@ sudo apt-get -y install ccache git libboost-system1.58.0 libboost-filesystem1.58
 sudo apt-get install -y  build-essential  automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ \
   cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev \
   libcurl4-openssl-dev libgtest-dev libreadline-dev libminiupnpc-dev libzmq3-dev libmicrohttpd-dev libssl-dev \
-  libhwloc-dev libuv1-dev libseccom-dev libcap-dev qtdeclarative5-dev qml-module-qtquick-controls qttools5-dev-tools libboost-all-dev
+  libhwloc-dev libuv1-dev libseccomp-dev libcap-dev qtdeclarative5-dev qml-module-qtquick-controls qttools5-dev-tools libboost-all-dev
 sudo apt-get install -y ocl-icd-opencl-dev 
 sudo apt-get install -y nvidia-cuda-dev 
 sudo pip install construct==2.5.2 scrypt
