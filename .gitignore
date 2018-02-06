@@ -45,7 +45,7 @@ README-cloudshell.txt
 npm-debug.log*
 eval
 Applications
-work
+work*
 go
 tmp
 .pm2
