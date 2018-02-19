@@ -15,6 +15,16 @@ sudo apt-get install -y ocl-icd-opencl-dev
 sudo apt-get install -y nvidia-cuda-dev 
 sudo pip install construct==2.5.2 scrypt
 
+git clone https://github.com/lhartikk/xcoin-hash.git
+cd xcoin-hash;sudo python setup.py install
+git clone https://github.com/sherlockcoin/X13-PythonHash.git
+cd X13-PythonHash;sudo python setup.py install
+git clone https://github.com/minings/x15_hash.git
+cd x15_hash;sudo python setup.py install
+git clone https://github.com/Neisklar/quarkcoin-hash-python.git
+cd quarkcoin-hash-python;sudo python setup.py install
+sudo \rm -rf xcoin-hash X13-PythonHash x15_hash quarkcoin-hash-python
+
 wget http://download.oracle.com/berkeley-db/db-4.8.30.zip
 unzip db-4.8.30.zip;rm db-4.8.30.zip
 cd db-4.8.30

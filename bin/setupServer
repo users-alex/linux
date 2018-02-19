@@ -24,7 +24,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
 	spell ispell pandoc gcsfuse cf-cli python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev
 sudo apt-get install -y fail2ban
 sudo apt-get install -y golang-go
-sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
+#sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
 sudo apt-get install -y docker-ce
 sudo pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard
 sudo pip install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz 
