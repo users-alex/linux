@@ -9,13 +9,13 @@ sudo ln -s $HOME /home/webhome
 #
 # install packages
 #
-curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+#curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+#curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
 #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 #
-echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+#echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+#echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 #
 sudo apt-get update 
@@ -56,8 +56,8 @@ sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
 #
 # disable google statistic gathering
 #
-gcloud config set disable_usage_reporting true
-sudo chown ${ID}: /dev/fuse
-[ ! -d /netdisk ] && sudo mkdir /netdisk
-sudo chown ${ID}: /netdisk
-gcsfuse $NETDISK /netdisk
+#gcloud config set disable_usage_reporting true
+#sudo chown ${ID}: /dev/fuse
+#[ ! -d /netdisk ] && sudo mkdir /netdisk
+#sudo chown ${ID}: /netdisk
+#gcsfuse $NETDISK /netdisk
