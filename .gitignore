@@ -1,4 +1,5 @@
 .bash_logout
+.bitcoin
 .cache
 .cloudshell
 .config
@@ -69,3 +70,4 @@ db-4.8.30
 .tor
 .Bitcoinote
 backup
+private
