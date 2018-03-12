@@ -19,9 +19,9 @@ curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gp
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 #
 sudo apt-get update 
-sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
-	libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common \
-	spell ispell pandoc gcsfuse cf-cli python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev
+sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip
+sudo apt-get install -y	libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install -y	spell ispell pandoc gcsfuse cf-cli python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev
 sudo apt-get install -y fail2ban bison zip unzip docker-compose
 sudo apt-get install -y golang-go
 #sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver

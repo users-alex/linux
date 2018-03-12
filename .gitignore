@@ -71,3 +71,10 @@ db-4.8.30
 .Bitcoinote
 backup
 private
+.bcoin/
+.bwdb/
+.dbshell
+.gnupg/
+.mongorc.js
+alex2006hw
+xcoin-hash/

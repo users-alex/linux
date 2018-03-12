@@ -149,3 +149,5 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 
 [[ -s "/home/usrcoin/.gvm/scripts/gvm" ]] && source "/home/usrcoin/.gvm/scripts/gvm"
+
+[[ -s "/home/alex2006hw/.gvm/scripts/gvm" ]] && source "/home/alex2006hw/.gvm/scripts/gvm"
