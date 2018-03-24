@@ -69,6 +69,8 @@ db-4.8.30
 .VERGE
 .tor
 .Bitcoinote
+.rnd
+mining-tools
 backup
 private
 .bcoin/
