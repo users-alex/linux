@@ -1,6 +1,7 @@
 .bash_logout
 .bitcoin
 .cache
+.cargo
 .cloudshell
 .config
 .gsutil*
@@ -79,4 +80,5 @@ private
 .gnupg/
 .mongorc.js
 alex2006hw
+backups
 xcoin-hash/
