@@ -81,4 +81,5 @@ private
 .mongorc.js
 alex2006hw
 backups
+.ethash
 xcoin-hash/

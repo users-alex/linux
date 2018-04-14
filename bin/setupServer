@@ -3,9 +3,9 @@
 #
 [ -f $HOME/.secrets ] && source "$HOME/.secrets"
 ID=`id -nu`
-[ -L /home/webhome ] && sudo rm -f /home/webhome &
-[ -d /home/webhome ] && sudo mv /home/webhome /home/webold && sudo rm -rf /home/webold &
-sudo ln -s $HOME /home/webhome
+#[ -L /home/webhome ] && sudo rm -f /home/webhome &
+#[ -d /home/webhome ] && sudo mv /home/webhome /home/webold && sudo rm -rf /home/webold &
+#sudo ln -s $HOME /home/webhome
 #
 # install packages
 #
@@ -20,22 +20,28 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 #
 sudo apt-get update 
 #sudo apt-get install -y cf-cli
-sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip
-sudo apt-get install -y	libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common
-sudo apt-get install -y	spell ispell pandoc gcsfuse python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev
-sudo apt-get install -y fail2ban bison zip unzip docker-compose
-sudo apt-get install -y golang-go
-#sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
-sudo apt-get install -y docker-ce
-sudo pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard
-sudo pip install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz 
-sudo pip install glances
+sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
+  libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common \
+  spell ispell pandoc gcsfuse python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
+  fail2ban bison zip unzip \
+  golang-go docker-ce
 sudo usermod -aG docker $(whoami)
+#sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
+#
+# glances
+#
+sudo pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb \
+  elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard \
+  https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz glances
+#
+# docker-compose
+#
+sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 #
 # ipfs
 #
-export PATH=$PATH:$GOROOT/bin:$GOPATH/
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/
 wget https://dist.ipfs.io/go-ipfs/v0.4.13/go-ipfs_v0.4.13_linux-amd64.tar.gz
 tar xvfz go-ipfs_v0.4.13_linux-amd64.tar.gz
 sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
@@ -52,8 +58,8 @@ sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
 /usr/local/bin/ipfs daemon & # run ipfs daemon in background
 #
 # install bluemix
-( cd /tmp;wget https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64;tar zxf /tmp/linux64 )
-( cd /tmp/Bluemix_CLI;sudo ./install_bluemix_cli )
+#( cd /tmp;wget https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64;tar zxf /tmp/linux64 )
+#( cd /tmp/Bluemix_CLI;sudo ./install_bluemix_cli )
 #
 # disable google statistic gathering
 #

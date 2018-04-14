@@ -141,13 +141,8 @@ export PATH=$PATH:$GOROOT/bin
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
-[[ -s "/home/alex/.gvm/scripts/gvm" ]] && source "/home/alex/.gvm/scripts/gvm"
-[[ -f "$HOME/.motd" ]] && cat $HOME/.motd
-#[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+[[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
+[[ -f "${HOME}/.motd" ]] && cat ${HOME}/.motd
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
-
-[[ -s "/home/usrcoin/.gvm/scripts/gvm" ]] && source "/home/usrcoin/.gvm/scripts/gvm"
-
-[[ -s "/home/alex2006hw/.gvm/scripts/gvm" ]] && source "/home/alex2006hw/.gvm/scripts/gvm"
