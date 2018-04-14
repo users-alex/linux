@@ -25,6 +25,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip \
   golang-go docker-ce
+sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
 #sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
 #
