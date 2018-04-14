@@ -19,10 +19,10 @@ curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gp
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 #
 sudo apt-get update 
-#sudo apt-get install -y cf-cli
+#sudo apt-get install -y cf-cli gcsfuse
 sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
   libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common \
-  spell ispell pandoc gcsfuse python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
+  spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip \
   golang-go docker-ce
 sudo usermod -aG docker $(whoami)
