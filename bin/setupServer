@@ -18,7 +18,7 @@ curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gp
 #echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 #
-sudo apt-get update 
+sudo apt-get update && sudo apt-get -y upgrade
 #sudo apt-get install -y cf-cli gcsfuse
 sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
   libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common \
@@ -37,17 +37,17 @@ sudo pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat infl
 #
 # docker-compose
 #
-sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 #
 # ipfs
 #
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/
-wget https://dist.ipfs.io/go-ipfs/v0.4.13/go-ipfs_v0.4.13_linux-amd64.tar.gz
-tar xvfz go-ipfs_v0.4.13_linux-amd64.tar.gz
+wget https://dist.ipfs.io/go-ipfs/v0.4.14/go-ipfs_v0.4.14_linux-amd64.tar.gz
+tar xvfz go-ipfs_v0.4.14_linux-amd64.tar.gz
 sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
-\rm -rf go-ipfs_v0.4.13_linux-amd64.tar.gz* go-ipfs &
+\rm -rf go-ipfs_v0.4.14_linux-amd64.tar.gz* go-ipfs &
 #
 /usr/local/bin/ipfs init
 /usr/local/bin/ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
