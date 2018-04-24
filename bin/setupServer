@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
   libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common \
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
-  fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev \
+  fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
   golang-go docker-ce
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
@@ -58,6 +58,9 @@ sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
 /usr/local/bin/ipfs config --json Gateway.Writable true
 /usr/local/bin/ipfs config --json Gateway.HTTPHeaders.Access-Control-Expose-Headers '["Ipfs-Hash"]'
 /usr/local/bin/ipfs daemon & # run ipfs daemon in background
+#
+# install stack
+curl -sSL https://get.haskellstack.org/ | sh
 #
 # install bluemix
 #( cd /tmp;wget https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64;tar zxf /tmp/linux64 )
