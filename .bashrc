@@ -147,4 +147,3 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 . ~/.bash_prompt
 
 
-[[ -s "/home/ubuntu/.gvm/scripts/gvm" ]] && source "/home/ubuntu/.gvm/scripts/gvm"
