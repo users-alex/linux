@@ -82,5 +82,8 @@ private
 alex2006hw
 backups
 .ethash
+.stack
+.rpmmacros
 xcoin-hash/
 ut
+fv
