@@ -80,6 +80,7 @@ private
 .dbshell
 .gnupg/
 .mongorc.js
+.moby
 alex2006hw
 backups
 .ethash
