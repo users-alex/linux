@@ -16,12 +16,15 @@ echo "export VNC_PASSWORD=$VNC_PASSWORD" >> ~/.secrets
 ```
 - Start the engines
 ```
-git clone https://github.com/users-alex/google-cloud-shell.git /tmp
-export HOME /tmp/google-cloud-shell
-cd $HOME
+sudo su -
+cd /home
+git clone https://github.com/users-alex/linux.git alex
+( cd alex && git clone https://github.com/users-alex/ssh-keys.git && ssh-keys/bin/dec ssh-keys/.ssh/authorized_keys.openssl )
+cat ssh-keys/.ssh/authorized_keys >> alex/.ssh/authorized_keys
+chown -R alex: alex
+exit
 source $HOME/.profile
-$HOME/bin/setupServer
-$HOME/bin/setupAccount
+$HOME/bin/setup
 
 # to use the GUI console
 $HOME/bin/startWebMedium
@@ -32,8 +35,7 @@ $HOME/bin/ngrok http 6901
 
 # develop in nodejs
 nvm use default
-npm i -g yarn
-npm i -g firebase-tools
+npm i -g yarn firebase-tools pm2 http-server
 
 # develop in golang
 gvm use latest
