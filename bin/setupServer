@@ -24,7 +24,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   libreadline6 libreadline6-dev bison apt-transport-https ca-certificates curl software-properties-common \
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
-  golang-go libxss1 libgconf-2-4 docker-ce
+  golang-go libxss1 libgconf-2-4 docker-ce parallel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
 #sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
