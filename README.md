@@ -1,6 +1,6 @@
-# google-cloud-shell
+# linux-cloud-shell
 --------
-## Highly opinionated disposable home for [20Min](./README-cloudshell.md) ephemeral google cloud [shell](https://console.cloud.google.com/cloudshell)
+## Highly opinionated cloud shell
 
 ### purpose :
 - This is a drop in home account for UBUNTU/DEBIAN nodejs and golang
@@ -42,4 +42,4 @@ gvm use latest
 
 
 
-##### version : 0.0.5
+##### version : 0.0.6
