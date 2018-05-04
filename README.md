@@ -19,8 +19,8 @@ echo "export VNC_PASSWORD=$VNC_PASSWORD" >> ~/.secrets
 sudo su -
 cd /home
 git clone https://github.com/users-alex/linux.git alex
-( cd alex && git clone https://github.com/users-alex/ssh-keys.git && ssh-keys/bin/dec ssh-keys/.ssh/authorized_keys.openssl )
-cat ssh-keys/.ssh/authorized_keys >> alex/.ssh/authorized_keys
+( cd alex && git clone https://github.com/users-alex/ssh-keys.git && ./ssh-keys/bin/dec ./ssh-keys/.ssh/authorized_keys.openssl )
+cat ./ssh-keys/.ssh/authorized_keys >> ./alex/.ssh/authorized_keys
 chown -R alex: alex
 exit
 source $HOME/.profile
