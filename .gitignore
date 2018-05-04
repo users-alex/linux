@@ -7,7 +7,6 @@
 .gsutil*
 .npm
 .nvm
-.nv
 .orion
 README-cloudshell.txt
 .ssh
