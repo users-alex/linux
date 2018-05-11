@@ -9,7 +9,8 @@ ID=`id -nu`
 #
 # increase file handles
 #
-echo "fs.file-max = 131072" | sudo tee /etc/sysctl.conf
+echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+echo "fs.file-max = 131072" | sudo tee /etc/sysctl.conf && sudo sysctl -p
 echo "session required        pam_unix.so" | sudo tee -a /etc/pam.d/common-session
 echo "session optional        pam_systemd.so" | sudo tee -a /etc/pam.d/common-session
 echo "session required        pam_limits.so" | sudo tee -a /etc/pam.d/common-session
