@@ -33,6 +33,7 @@ README-cloudshell.txt
 .fontconfig
 .atom*
 .node_repl_history
+.tintin
 .wget-hsts
 .ethereum*
 .standard-cache*
@@ -47,6 +48,7 @@ README-cloudshell.txt
 **/node_modules
 npm-debug.log*
 eval
+game
 Applications
 work*
 go

@@ -7,6 +7,25 @@ ID=`id -nu`
 #[ -d /home/webhome ] && sudo mv /home/webhome /home/webold && sudo rm -rf /home/webold &
 #sudo ln -s $HOME /home/webhome
 #
+# increase file handles
+#
+echo "fs.file-max = 131072" | sudo tee /etc/sysctl.conf
+echo "session required        pam_unix.so" | sudo tee -a /etc/pam.d/common-session
+echo "session optional        pam_systemd.so" | sudo tee -a /etc/pam.d/common-session
+echo "session required        pam_limits.so" | sudo tee -a /etc/pam.d/common-session
+#
+echo "* soft     nproc          131072" | sudo tee -a /etc/security/limits.conf
+echo "* hard     nproc          131072" | sudo tee -a /etc/security/limits.conf
+echo "* soft     nofile         131072" | sudo tee -a /etc/security/limits.conf
+echo "* hard     nofile         131072" | sudo tee -a /etc/security/limits.conf
+echo "root soft     nproc          131072" | sudo tee -a /etc/security/limits.conf
+echo "root hard     nproc          131072" | sudo tee -a /etc/security/limits.conf
+echo "root soft     nofile         131072" | sudo tee -a /etc/security/limits.conf
+echo "root hard     nofile         131072" | sudo tee -a /etc/security/limits.conf
+#
+echo "DefaultLimitNOFILE=20000" | sudo tee -a /etc/systemd/system.conf
+echo "DefaultLimitNOFILE=20000" | sudo tee -a /etc/systemd/user.conf
+#
 # install packages
 #
 #curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
