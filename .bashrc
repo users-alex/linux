@@ -147,4 +147,3 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
-

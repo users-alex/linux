@@ -32,11 +32,13 @@ echo "DefaultLimitNOFILE=20000" | sudo tee -a /etc/systemd/user.conf
 #curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
 #curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 #
 #echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
 #echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 #
 sudo apt-get update && sudo apt-get -y upgrade
 #sudo apt-get install -y cf-cli gcsfuse
@@ -45,6 +47,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
   golang-go libxss1 libgconf-2-4 docker-ce parallel
+sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib fakeroot rpm mono-complete mono-devel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
 #sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
