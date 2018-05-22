@@ -46,6 +46,8 @@ README-cloudshell.txt
 .cf
 .linuxbrew
 **/node_modules
+.electron-gyp
+.rpmdb
 npm-debug.log*
 eval
 game
