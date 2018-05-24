@@ -47,7 +47,8 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
   golang-go libxss1 libgconf-2-4 docker-ce parallel
-sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib fakeroot rpm mono-complete mono-devel libxkbfile-dev
+sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib fakeroot rpm libxkbfile-dev
+sudo apt-get install --no-install-recommends -y mono-complete
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
 sudo service docker restart
