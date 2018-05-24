@@ -146,6 +146,3 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 [[ -f "${HOME}/.motd" ]] && cat ${HOME}/.motd
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
-
-
-[[ -s "/home/usertoken_com/.gvm/scripts/gvm" ]] && source "/home/usertoken_com/.gvm/scripts/gvm"

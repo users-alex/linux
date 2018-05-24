@@ -1,6 +1,6 @@
 [ -f ~/.secrets ] && source ~/.secrets
 #
-docker run -d -p 5901:5901 -p 6901:6901 \
+docker run -d -p 5999:5901 -p 6999:6901 \
   -e VNC_PW=$VNC_PASSWORD -e VNC_COL_DEPTH=24 -e VNC_RESOLUTION='1200x850' \
   --user $(id -u):$(id -g) \
   -v /home:/home \
@@ -16,7 +16,7 @@ docker run -d -p 5901:5901 -p 6901:6901 \
 # forward vnc port
 #
 echo -n "VNC connect : "
-echo "~/bin/ngrok tcp 5901"
+echo "~/bin/ngrok tcp 5999"
 echo -n "WEB connect : "
-echo "~/bin/ngrok http 6901"
+echo "~/bin/ngrok http 6999"
 echo
