@@ -50,6 +50,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
 sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib fakeroot rpm mono-complete mono-devel libxkbfile-dev
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
+sudo service docker restart
 #sudo apt-get install -y  xfce4 xfce4-goodies tightvncserver
 #
 # glances
