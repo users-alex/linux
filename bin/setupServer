@@ -69,7 +69,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/
 wget https://dist.ipfs.io/go-ipfs/v0.4.14/go-ipfs_v0.4.14_linux-amd64.tar.gz
 tar xvfz go-ipfs_v0.4.14_linux-amd64.tar.gz
-sudo mv go-ipfs/ipfs /usr/local/bin/ipfs &
+sudo mv go-ipfs/ipfs /usr/local/bin/ipfs
 \rm -rf go-ipfs_v0.4.14_linux-amd64.tar.gz* go-ipfs &
 #
 /usr/local/bin/ipfs init
