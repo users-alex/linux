@@ -89,6 +89,7 @@ backups
 .stack
 .rpmmacros
 .rpmdb/
+.electron-gyp/
 xcoin-hash/
 ut
 fv
