@@ -2,12 +2,4 @@
 # Cache setup
 #
 CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
-\rm -rf ~/.cache;\rm -rf /tmp/${CACHEDIR}/cache;mkdir -p /tmp/${CACHEDIR}/cache;ln -s /tmp/${CACHEDIR}/cache ~/.cache
-#
-\rm -rf ~/.npm;mkdir -p ~/.cache/npm;ln -s ~/.cache/npm ~/.npm
-\rm -rf ~/.electron;mkdir -p ~/.cache/electron;ln -s ~/.cache/electron ~/.electron
-\rm -rf ~/.electron-gyp;mkdir -p ~/.cache/electron-gyp;ln -s ~/.cache/electron-gyp ~/.electron-gyp
-\rm -rf ~/.npm;mkdir -p ~/.cache/npm;ln -s ~/.cache/npm ~/.npm
-\rm -rf ~/.node-gyp;mkdir -p ~/.cache/node-gyp;ln -s ~/.cache/node-gyp ~/.node-gyp
-\rm -rf ~/.ccache;mkdir -p ~/.cache/ccache;ln -s ~/.cache/ccache ~/.ccache
-\rm -rf ~/.bitmonero;mkdir -p ~/.cache/bitmonero;ln -s ~/.cache/bitmonero ~/.bitmonero
+\rm -rf ~/.cache;\rm -rf /tmp/$CACHEDIR;mkdir -p /tmp/$CACHEDIR;ln -s /tmp/$CACHEDIR ~/.cache
