@@ -54,6 +54,7 @@ work*
 go
 tmp
 .pm2
+.pm2-dev
 .wireshark
 .forever
 .bluemix/
