@@ -20,6 +20,8 @@ tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
 \rm -rf ~/.vim;mkdir -p ~/.vim/autoload ~/.vim/bundle 
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim &
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh &
+# install shell plug-ins
+curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.z.sh
 #
 # install Applications
 #
