@@ -92,6 +92,7 @@ backups
 .rpmdb/
 .electron
 .electron-gyp
+.z
 xcoin-hash/
 ut
 fv
