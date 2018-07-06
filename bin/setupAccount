@@ -8,8 +8,12 @@ CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 \rm -rf ~/.node-gyp;mkdir -p ~/.cache/node-gyp;ln -s ~/.cache/node-gyp ~/.node-gyp
 \rm -rf ~/.ccache;mkdir -p ~/.cache/ccache;ln -s ~/.cache/ccache ~/.ccache
 \rm -rf ~/.bitmonero;mkdir -p ~/.cache/bitmonero;ln -s ~/.cache/bitmonero ~/.bitmonero
-# install gvm nvm
-\rm -rf ~/.nvm;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash &
+# install gvm nvs
+#\rm -rf ~/.nvm;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash &
+# using nvs instead of nvm
+export NVS_HOME="$HOME/.nvs"
+git clone https://github.com/jasongin/nvs "$NVS_HOME"
+. "$NVS_HOME/nvs.sh" install
 \rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 \rm -rf ~/.gvm/archive;mkdir -p ~/.cache/gvm/archive;ln -s ~/.cache/gvm/archive ~/.gvm/archive
 go get github.com/karalabe/xgo  # go cross compiler
@@ -29,6 +33,5 @@ curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.z.sh
 #
 # install cloud-foundry
 # curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
-#(for fff in 6.11.2 7.10 8;do nvm install $fff;done);nvm alias default 8 &
 #(gvm use system;gvm install go1.10.1;gvm alias create latest go1.10.1) &
 #(cd /tmp;git clone https://github.com/mininet/mininet.git;./mininet/util/install.sh -s ~/mininet -a ) &

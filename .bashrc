@@ -130,9 +130,11 @@ if [ -d "$HOME/bin" ] ; then
    PATH="$HOME/bin:$HOME/.linuxbrew/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
 export GOROOT=$HOME/go
 export GOPATH=$HOME/work/golang
@@ -147,4 +149,5 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 [[ -f "${HOME}/.motd" ]] && cat ${HOME}/.motd
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
+
 
