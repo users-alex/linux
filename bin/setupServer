@@ -84,7 +84,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 #/usr/local/bin/ipfs daemon & # run ipfs daemon in background
 #
 # install stack
-curl -sSL https://get.haskellstack.org/ | sh
+curl -sSL https://get.haskellstack.org/ | sh -s - -f
 #
 # install bluemix
 #( cd /tmp;wget https://clis.ng.bluemix.net/download/bluemix-cli/latest/linux64;tar zxf /tmp/linux64 )
