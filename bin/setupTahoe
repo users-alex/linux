@@ -1,14 +1,19 @@
 #
 # tahoe-lafs : https://github.com/tahoe-lafs/tahoe-lafs
 #
-HOSTNAME=dev01.alex2006hw.com
-[ ! -d /netdisk/tahoe/introducer ] && mkdir -p /netdisk/tahoe/introducer && \
-  tahoe create-introducer --location=tcp:$HOSTNAME:9000 --port=tcp:9000 --basedir=/netdisk/tahoe/introducer && \
-  tahoe start /netdisk/tahoe/introducer
-[ ! -d /netdisk/tahoe/node ] && mkdir -p /netdisk/tahoe/node && \
-  tahoe create-node --location=tcp:$HOSTNAME:8889 --port=tcp:8889 --introducer=$(cat /netdisk/tahoe/introducer/private/introducer.furl) /netdisk/tahoe/node && \
-  sed -i 's/nickname\ =/nickname=dev01/g' /netdisk/tahoe/node/tahoe.cfg  && tahoe run /netdisk/tahoe/node &
-[ ! -d /netdisk/tahoe/client ] && mkdir -p /netdisk/tahoe/client && \
-  tahoe create-client --webport=8888 --introducer=$(cat /netdisk/tahoe/introducer/private/introducer.furl) --basedir=/netdisk/tahoe/client --shares-needed=1 --shares-happy=1 --shares-total=1 && \
-  sed -i 's/nickname\ =/nickname=dev01/g' /netdisk/tahoe/client/tahoe.cfg && tahoe run /netdisk/tahoe/client &
+HOSTNAME="$(cat /etc/hostname).alex2006hw.com"
+DATADIR="$HOME/tahoe"
+#
+[ ! -d "$DATADIR/introducer" ] && mkdir -p "$DATADIR/introducer" && \
+  tahoe create-introducer --location="tcp:$HOSTNAME:9000" --port="tcp:9000" --basedir="$DATADIR/introducer" && \
+  tahoe start "$DATADIR/introducer"
+[ ! -d "$DATADIR/node" ] && mkdir -p "$DATADIR/node" && \
+  tahoe create-node --location="tcp:$HOSTNAME:8889" --port="tcp:8889" --introducer=$(cat "$DATADIR/introducer/private/introducer.furl") "$DATADIR/node" && \
+  sed -i '' "s/nickname\ =/nickname=$HOSTNAME/g" "$DATADIR/node/tahoe.cfg"  && tahoe run "$DATADIR/node" &
+
+exit
+
+[ ! -d "$DATADIR/client" ] && mkdir -p "$DATADIR/client" && \
+  tahoe create-client --webport=8888 --introducer=$(cat "$DATADIR/introducer/private/introducer.furl") --basedir="$DATADIR/client" --shares-needed=2 --shares-happy=2 --shares-total=2 && \
+  sed -i '' "s/nickname\ =/nickname=$HOSTNAME/g" "$DATADIR/client/tahoe.cfg" && tahoe run "$DATADIR/client" &
 
