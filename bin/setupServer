@@ -56,7 +56,8 @@ sudo usermod -aG docker $(whoami)
 # glances
 #
 sudo pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb \
-  elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard glances
+  elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard glances \
+  tahoe-lafs
 sudo pip install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz
 #
 # docker-compose
