@@ -94,6 +94,7 @@ backups
 .electron
 .electron-gyp
 .z
+.tahoe
 xcoin-hash/
 ut
 fv

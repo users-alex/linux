@@ -2,7 +2,9 @@
 # Cache setup
 #
 CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
-\rm -rf ~/.cache;\rm -rf /tmp/$CACHEDIR;mkdir -p /tmp/$CACHEDIR;ln -s /tmp/$CACHEDIR ~/.cache
+\rm -rf ~/.cache && \rm -rf /tmp/$CACHEDIR && mkdir -p /tmp/$CACHEDIR && ln -s /tmp/$CACHEDIR ~/.cache
+[ -d /netdisk/cache ] && ( \rm -rf ~/.cache && ln -s /netdisk/cache ~/.cache )
 mkdir -p $HOME/.cache/electron-gyp $HOME/.cache/electron \
 	$HOME/.cache/npm $HOME/.cache/node-gyp $HOME/.cache/ccache \
 	$HOME/.cache/bitmonero $HOME/.cache/gvm/archive
+
