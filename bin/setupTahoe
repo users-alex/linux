@@ -5,11 +5,11 @@ HOSTNAME="$(cat /etc/hostname).alex2006hw.com"
 DATADIR="$HOME/tahoe"
 INTRODUCER="pb://qyeuilc3ujrzvalbtzf45qrgvnis2cm5@tcp:35.211.70.172:9000/votvnl7rwarcqtea335cfe23gj2mvyxn"
 #
-# Start up introducer
+# Start up introducer to get a new INVITATION
 #
-[ ! -d "$DATADIR/introducer" ] && mkdir -p "$DATADIR/introducer" && \
-  tahoe create-introducer --location="tcp:$HOSTNAME:9000" --port="tcp:9000" --basedir="$DATADIR/introducer" && \
-  tahoe start "$DATADIR/introducer" && INTRODUCER=$(cat "$DATADIR/introducer/private/introducer.furl")
+#[ ! -d "$DATADIR/introducer" ] && mkdir -p "$DATADIR/introducer" && \
+#  tahoe create-introducer --location="tcp:$HOSTNAME:9000" --port="tcp:9000" --basedir="$DATADIR/introducer" && \
+#  tahoe start "$DATADIR/introducer" && INTRODUCER=$(cat "$DATADIR/introducer/private/introducer.furl")
 
 echo "INVITATION : $INTRODUCER"
 #
