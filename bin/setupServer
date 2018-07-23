@@ -47,7 +47,8 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   libreadline-dev bison apt-transport-https ca-certificates curl software-properties-common \
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
-  golang-go libxss1 libgconf-2-4 docker-ce parallel rpm fakeroot libkrb5-dev
+  golang-go libxss1 libgconf-2-4 docker-ce parallel rpm fakeroot libkrb5-dev \
+  restic s3fs
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
