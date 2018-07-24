@@ -26,6 +26,7 @@ echo "root hard     nofile         131072" | sudo tee -a /etc/security/limits.co
 #
 echo "DefaultLimitNOFILE=20000" | sudo tee -a /etc/systemd/system.conf
 echo "DefaultLimitNOFILE=20000" | sudo tee -a /etc/systemd/user.conf
+echo "GatewayPorts clientspecified" | sudo tee -a /etc/ssh/sshd_config
 #
 # install packages
 #

@@ -96,6 +96,7 @@ backups
 .z
 .tahoe
 .passwd-s3fs
+.dat
 xcoin-hash/
 ut
 fv
