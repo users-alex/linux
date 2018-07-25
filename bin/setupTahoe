@@ -11,10 +11,10 @@ DATADIR="$HOME/tahoe"
   tahoe start "$DATADIR/introducer"
 INTRODUCER=$(cat "$DATADIR/introducer/private/introducer.furl")
 echo "INVITATION : $INTRODUCER"
-exit
 #
 # start up a data node
 #
+[ -d "$DATADIR/node" ] && tahoe run "$DATADIR/node" && exit
 [ ! -d "$DATADIR/node" ] && mkdir -p "$DATADIR/node"
 #
 tahoe create-node --location="tcp:$HOSTNAME:8889" --port="tcp:8889" \
