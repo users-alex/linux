@@ -50,7 +50,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
   golang-go libxss1 libgconf-2-4 docker-ce parallel rpm fakeroot libkrb5-dev \
   restic s3fs libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev \
-  libusb-1.0-0-dev libudev-dev autoconf libpng12-0
+  libusb-1.0-0-dev libudev-dev autoconf libpng-dev
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
@@ -70,11 +70,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 #
 # openzwave
 #
-git clone https://github.com/OpenZWave/open-zwave.git
-( cd open-zwave && \
-  CFLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 make && sudo CFLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 make install && \
-sudo ldconfig )
-rm -rf open-zwave
+#git clone https://github.com/OpenZWave/open-zwave.git
+#( cd open-zwave && \
+#  CFLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 make && sudo CFLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 make install && \
+#sudo ldconfig )
+#rm -rf open-zwave
 
 #
 # ipfs
