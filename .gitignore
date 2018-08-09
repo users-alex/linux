@@ -94,7 +94,6 @@ backups
 .electron
 .electron-gyp
 .z
-.tahoe
 .passwd-s3fs
 .dat
 xcoin-hash/
