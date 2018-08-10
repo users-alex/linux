@@ -1,0 +1,7 @@
+[user]
+	email = alex2006hw@gmail.com
+	name = Alex Davis
+[push]
+	default = simple
+[status]
+	submoduleSummary = true

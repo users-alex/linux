@@ -147,6 +147,7 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 [[ -f "${HOME}/.z.sh" ]] && source "${HOME}/.z.sh"
 [[ -f "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
 [[ -f "${HOME}/.motd" ]] && cat ${HOME}/.motd
+[[ -f "${HOME}/.gitconfig-template" ]] && mv ${HOME}/.gitconfig-template ${HOME}/.gitconfig
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
