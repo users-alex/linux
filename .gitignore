@@ -46,6 +46,7 @@ README-cloudshell.txt
 .webpack*
 .cf
 .linuxbrew
+.gitconfig
 **/node_modules
 npm-debug.log*
 eval

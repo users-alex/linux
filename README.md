@@ -9,12 +9,14 @@
 ### usage :
 
 - Generate a web access password
+
 ```
 export VNC_PASSWORD=`date +%s | sha256sum | base64 | head -c 32`
 echo "# web GUI password" >> ~/.secrets
 echo "export VNC_PASSWORD=$VNC_PASSWORD" >> ~/.secrets
 ```
 - Start the engines
+
 ```
 sudo su -
 cd /home
@@ -39,9 +41,14 @@ npm i -g yarn firebase-tools pm2 http-server
 
 # develop in golang
 gvm use latest
-
 ```
+- git sugar
+
+```sh
+ git config --global status.submoduleSummary true
+ ```
 
 
 
-##### version : 0.0.6
+
+##### version : 0.6.3
