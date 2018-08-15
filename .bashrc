@@ -144,6 +144,7 @@ export PATH=$PATH:$GOROOT/bin
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
+[[ -d "${HOME}/.cargo/bin" ]] && export PATH="${HOME}/.cargo/bin:$PATH"
 [[ -f "${HOME}/.z.sh" ]] && source "${HOME}/.z.sh"
 [[ -f "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
 [[ -f "${HOME}/.motd" ]] && cat ${HOME}/.motd

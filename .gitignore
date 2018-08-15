@@ -97,6 +97,8 @@ backups
 .z
 .passwd-s3fs
 .dat
+.multirust
+.rustup/
 xcoin-hash/
 ut
 fv
