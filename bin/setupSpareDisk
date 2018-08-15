@@ -12,6 +12,8 @@ echo "found spare disk on /dev/sdb"
 sudo sfdisk /dev/sdb < ~/bin/part_table
 sudo mkswap /dev/sdb1
 sudo mkfs.ext4 -j /dev/sdb2
+# create /netdisk
+[[ ! -d /netdisk ]] && sudo mkdir /netdisk
 [[ -z $FSTAB ]] && \
 echo "/dev/sdb1       swap    swap    defaults,pri=200        0 0" | sudo tee -a /etc/fstab && \
 echo "/dev/sdb2       /netdisk        ext4    defaults        0 0" | sudo tee -a /etc/fstab
