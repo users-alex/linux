@@ -16,7 +16,7 @@ sudo mkfs.ext4 -j /dev/sdb2
 [[ ! -d /netdisk ]] && sudo mkdir /netdisk
 [[ -z $FSTAB ]] && \
 echo "/dev/sdb1       swap    swap    defaults,pri=200        0 0" | sudo tee -a /etc/fstab && \
-echo "/dev/sdb2       /netdisk        ext4    defaults        0 0" | sudo tee -a /etc/fstab
+echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | sudo tee -a /etc/fstab
 #
 sudo swapon -a
 sudo mount -a
