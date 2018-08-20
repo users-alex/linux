@@ -1,24 +1,47 @@
 #
 # spare disk setup
-#
-SPAREDISK=$(sudo fdisk -l |grep '/dev/sdb')
+#  add this to crontab -e to run at boot
+#  --------------------------------------
+#  @reboot /usr/local/sbin/setupSpareDisk > /var/log/reboot.log 2>&1 &
+#  --------------------------------------
+DATE=$(date +%Y%m.%d.%s)
+SPAREDISK=$(fdisk -l |grep '/dev/sdb')
 FSTAB=$(grep sdb /etc/fstab)
+echo "$DATE: spare disk"
 # check fstab for sdb
 [[ ! -z $FSTAB ]] && exit 0
 # check if sdb is available
 [[ -z $SPAREDISK ]] && exit 0
 #
-echo "found spare disk on /dev/sdb"
-sudo sfdisk /dev/sdb < ~/bin/part_table
-sudo mkswap /dev/sdb1
-sudo mkfs.ext4 -j /dev/sdb2
+echo "$DATE: detecting spare disk"
+
+partdisk(){
+sfdisk /dev/sdb <<PART_TABLE
+
+label: dos
+label-id: 0xd5f7e487
+device: /dev/sdb
+unit: sectors
+
+/dev/sdb1 : start=         256, size=     5242880, type=82
+/dev/sdb2 : start=     5243136, size=    93060864, type=83
+
+PART_TABLE
+}
+echo "$DATE: building spare disk on /dev/sdb"
+partdisk
+mkswap /dev/sdb1
+mkfs.ext4 -j /dev/sdb2
 # create /netdisk
-[[ ! -d /netdisk ]] && sudo mkdir /netdisk
+echo "$DATE: adding spare disk to /etc/fstab"
+[[ ! -d /netdisk ]] && mkdir /netdisk
 [[ -z $FSTAB ]] && \
-echo "/dev/sdb1       swap    swap    defaults,pri=200        0 0" | sudo tee -a /etc/fstab && \
-echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | sudo tee -a /etc/fstab
+echo "/dev/sdb1       swap    swap    defaults,pri=200        0 0" | tee -a /etc/fstab && \
+echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | tee -a /etc/fstab
 #
-sudo swapon -a
-sudo mount -a
+swapon -a
+mount -a
+(mkdir -p /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && chmod 777 /netdisk/cache /netdisk/work /netdisk/tahoe)
+[[ ! -L /var/lib/docker ]] && ln -s /netdisk/docker /var/lib/docker
 #
 exit 0
