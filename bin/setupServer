@@ -50,7 +50,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
   golang-go libxss1 libgconf-2-4 docker-ce parallel rpm fakeroot libkrb5-dev \
   restic s3fs libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev \
-  libusb-1.0-0-dev libudev-dev autoconf libpng-dev libssl-dev libasound2
+  libusb-1.0-0-dev libudev-dev autoconf libpng-dev libssl-dev libasound2 libgmp3-dev
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
