@@ -3,10 +3,11 @@
 #  --------------------------------------
 #  @reboot /usr/local/sbin/setupSpareDisk > /var/log/reboot.log 2>&1 &
 #  --------------------------------------
+ME=$(/usr/bin/whoami)
 DATE=$(/bin/date +%Y%m.%d.%s)
 SPAREDISK=$(/usr/bin/sudo /sbin/fdisk -l |grep '/dev/sdb')
 FSTAB=$(/bin/grep sdb /etc/fstab)
-echo "$DATE: spare disk"
+echo "$DATE: $ME spare disk"
 # check fstab for sdb
 [[ ! -z $FSTAB ]] && exit 0
 # check if sdb is available
@@ -40,7 +41,7 @@ echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | /usr/bin/su
 #
 /usr/bin/sudo /sbin/swapon -a
 /usr/bin/sudo /bin/mount -a
-(/usr/bin/sudo /bin/mkdir -p /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && /usr/bin/sudo /bin/chown alex: /netdisk/cache /netdisk/work /netdisk/tahoe)
+(/usr/bin/sudo /bin/mkdir -p /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && /usr/bin/sudo /bin/chown $ME: /netdisk/cache /netdisk/work /netdisk/tahoe)
 [[ ! -L /var/lib/docker ]] && /usr/bin/sudo /bin/ln -s /netdisk/docker /var/lib/docker
 #
 exit 0
