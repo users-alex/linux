@@ -34,6 +34,7 @@ README-cloudshell.txt
 .v8flags*
 .webpack*
 .cf
+.nvs
 .linuxbrew
 .gitconfig
 **/node_modules
