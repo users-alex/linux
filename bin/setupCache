@@ -6,5 +6,6 @@ CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 [ -d /netdisk/cache ] && ( \rm -rf ~/.cache && ln -s /netdisk/cache ~/.cache )
 mkdir -p $HOME/.cache/electron-gyp $HOME/.cache/electron \
 	$HOME/.cache/npm $HOME/.cache/node-gyp $HOME/.cache/ccache \
-	$HOME/.cache/bitmonero $HOME/.cache/gvm/archive
+	$HOME/.cache/bitmonero $HOME/.cache/gvm/archive \
+  $HOME/.cache/config $HOME/.cache/gnupg $HOME/.cache/yarn
 
