@@ -36,7 +36,7 @@ $HOME/bin/ngrok tcp 5901
 $HOME/bin/ngrok http 6901
 
 # develop in nodejs
-nvs add 8.11.4
+nvs add 8.11.3
 nvs link 8
 nvs use 8
 npm i -g yarn firebase-tools pm2 http-server dat hypertunnel
