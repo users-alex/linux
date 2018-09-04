@@ -8,7 +8,6 @@ README-cloudshell.txt
 .vimshell
 .bash_history
 .conda*
-.ipfs
 .ICEauthority
 .Xauthority
 .dbus
@@ -18,8 +17,6 @@ README-cloudshell.txt
 .secrets
 .vim
 .gvm
-.local
-.pki
 .fontconfig
 .atom*
 .node_repl_history
@@ -33,7 +30,6 @@ README-cloudshell.txt
 .jspm*
 .v8flags*
 .webpack*
-.cf
 .nvs
 .linuxbrew
 .gitconfig
@@ -51,16 +47,11 @@ tmp
 .forever
 .bluemix/
 .bundle/
-.electron/
 .bitmonero
 .motd
 .zcash-params
 .sudo_as_admin_successful
 .docker
-mining
-mininet
-hack
-db-4.8.30
 .VERGE
 .tor
 .rnd
@@ -73,9 +64,6 @@ private
 alex2006hw
 .stack
 .rpmmacros
-.rpmdb/
-.electron
-.electron-gyp
 .z
 .passwd-s3fs
 .dat
