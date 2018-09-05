@@ -7,5 +7,7 @@ CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 mkdir -p $HOME/.cache/electron-gyp $HOME/.cache/electron \
 	$HOME/.cache/npm $HOME/.cache/node-gyp $HOME/.cache/ccache \
 	$HOME/.cache/bitmonero $HOME/.cache/gvm/archive \
-  $HOME/.cache/config $HOME/.cache/gnupg $HOME/.cache/yarn
+  $HOME/.cache/config $HOME/.cache/gnupg $HOME/.cache/yarn \
+  $HOME/.cache/cf $HOME/.cache/ipfs $HOME/.cache/local \
+  $HOME/.cache/pki $HOME/.cache/rpmdb
 
