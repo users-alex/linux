@@ -28,6 +28,9 @@ echo "DefaultLimitNOFILE=20000" | sudo tee -a /etc/systemd/system.conf
 echo "DefaultLimitNOFILE=20000" | sudo tee -a /etc/systemd/user.conf
 echo "GatewayPorts clientspecified" | sudo tee -a /etc/ssh/sshd_config
 #
+# hold back upgrading kernel in case we are secured boot
+sudo apt-mark hold grub-efi-amd64 grub-efi-amd64-signed
+#
 # install packages
 #
 #curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
