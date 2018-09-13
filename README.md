@@ -39,7 +39,7 @@ $HOME/bin/ngrok http 6901
 nvs add 8.11.3
 nvs link 8
 nvs use 8
-npm i -g yarn firebase-tools pm2 http-server dat hypertunnel
+npm i -g yarn firebase-tools pm2 http-server dat speedtest-net
 
 # develop in golang
 gvm use latest
