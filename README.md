@@ -43,6 +43,9 @@ npm i -g yarn firebase-tools pm2 http-server dat speedtest-net
 
 # develop in golang
 gvm use latest
+
+# install glide for go package management
+curl https://glide.sh/get | sh
 ```
 - git sugar
 
