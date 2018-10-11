@@ -11,6 +11,8 @@ sudo apt-get install -y  build-essential  automake autoconf pkg-config libcurl4-
   cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev \
   libcurl4-openssl-dev libgtest-dev libreadline-dev libminiupnpc-dev libzmq3-dev libmicrohttpd-dev libssl-dev \
   libhwloc-dev libuv1-dev libseccomp-dev libcap-dev qtdeclarative5-dev qml-module-qtquick-controls qttools5-dev-tools
+sudo apt-get install -y --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
+sudo apt-get install -y libc++-dev
 sudo apt-get install -y ocl-icd-opencl-dev 
 sudo apt-get install -y nvidia-cuda-dev 
 sudo pip install construct==2.5.2 scrypt
@@ -30,6 +32,6 @@ unzip db-4.8.30.zip;rm db-4.8.30.zip
 cd db-4.8.30
 cd build_unix/
 ../dist/configure --prefix=/usr/local --enable-cxx
-make
+MAKEFLAGS='-j$(nproc) -l$(nproc)' make
 sudo make install
 sudo rm -rf ~/db-4.8.30 ~/xcoin-hash
