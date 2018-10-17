@@ -10,12 +10,18 @@ CACHEDIR=`date +%s | sha256sum | base64 | head -c 32 ; echo`
 \rm -rf ~/.bitmonero;mkdir -p ~/.cache/bitmonero;ln -s ~/.cache/bitmonero ~/.bitmonero
 # install gvm nvs
 #\rm -rf ~/.nvm;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash &
-# using nvs instead of nvm
+# install nvs
 export NVS_HOME="$HOME/.nvs"
 git clone https://github.com/jasongin/nvs "$NVS_HOME"
 . "$NVS_HOME/nvs.sh" install
+(. "$NVS_HOME/nvs.sh" && nvs add 8.11.4;nvs link 8.11.4;nvs use 8.11.4) &
+# install gvm
 \rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 \rm -rf ~/.gvm/archive;mkdir -p ~/.cache/gvm/archive;ln -s ~/.cache/gvm/archive ~/.gvm/archive
+(. "${HOME}/.gvm/scripts/gvm" && gvm install go1.11 -B;gvm alias create latest go1.11 ) &
+# install xgo
+export GOROOT=~/go
+[ ! -d ${GOROOT} ] && mkdir -p ${GOROOT}
 go get github.com/karalabe/xgo  # go cross compiler
 #wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
 #tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
@@ -36,7 +42,5 @@ curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.z.sh
 #
 # install cloud-foundry
 # curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
-#  update tools
-# (nvs add 8.11.4;nvs link 8.11.4;nvs use 8.11.4) &
-# (gvm install go1.11 -B;gvm alias create latest go1.11) &
+#  install network emulator tool
 # (cd /tmp;git clone https://github.com/mininet/mininet.git;./mininet/util/install.sh -s ~/mininet -a ) &

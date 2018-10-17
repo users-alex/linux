@@ -137,9 +137,10 @@ export NVS_HOME="$HOME/.nvs"
 [ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
 export GOROOT=$HOME/go
-export GOPATH=$HOME/work/golang
-export GOBIN=$HOME/bin
+export GOPATH=$HOME/go/src
+export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOROOT/bin
+[ ! -d ${GOROOT} ] && mkdir -p ${GOROOT}
 
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
@@ -152,3 +153,5 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
+
+[[ -s "/home/alex/.gvm/scripts/gvm" ]] && source "/home/alex/.gvm/scripts/gvm"
