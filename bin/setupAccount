@@ -17,8 +17,8 @@ git clone https://github.com/jasongin/nvs "$NVS_HOME"
 \rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 \rm -rf ~/.gvm/archive;mkdir -p ~/.cache/gvm/archive;ln -s ~/.cache/gvm/archive ~/.gvm/archive
 go get github.com/karalabe/xgo  # go cross compiler
-wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
-tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
+#wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
+#tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
 #
 # install vim plug-ins
 \rm -rf ~/.vim;mkdir -p ~/.vim/autoload ~/.vim/bundle 
@@ -38,5 +38,5 @@ curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.z.sh
 # curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
 #  update tools
 # (nvs add 8.11.4;nvs link 8.11.4;nvs use 8.11.4) &
-# (gvm use system;gvm install go1.11;gvm alias create latest go1.11) &
+# (gvm install go1.11 -B;gvm alias create latest go1.11) &
 # (cd /tmp;git clone https://github.com/mininet/mininet.git;./mininet/util/install.sh -s ~/mininet -a ) &
