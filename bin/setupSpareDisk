@@ -1,13 +1,12 @@
-# spare disk setup
+## spare disk setup
 #  add this to crontab -e to run at boot
 #  --------------------------------------
 #  @reboot /usr/local/sbin/setupSpareDisk > /var/log/reboot.log 2>&1 &
 #  --------------------------------------
-ME=$(/usr/bin/whoami)
 DATE=$(/bin/date +%Y%m.%d.%s)
-SPAREDISK=$(/usr/bin/sudo /sbin/fdisk -l |grep '/dev/sdb')
+SPAREDISK=$(/sbin/fdisk -l |grep '/dev/sdb')
 FSTAB=$(/bin/grep sdb /etc/fstab)
-echo "$DATE: $ME spare disk"
+echo "$DATE: spare disk"
 # check fstab for sdb
 [[ ! -z $FSTAB ]] && exit 0
 # check if sdb is available
@@ -16,7 +15,7 @@ echo "$DATE: $ME spare disk"
 echo "$DATE: detecting spare disk"
 
 partdisk(){
-/usr/bin/sudo /sbin/sfdisk /dev/sdb <<PART_TABLE
+/sbin/sfdisk /dev/sdb <<PART_TABLE
 
 label: dos
 label-id: 0xd5f7e487
@@ -30,18 +29,19 @@ PART_TABLE
 }
 echo "$DATE: building spare disk on /dev/sdb"
 partdisk
-/usr/bin/sudo /sbin/mkswap /dev/sdb1
-/usr/bin/sudo /sbin/mkfs.ext4 -j /dev/sdb2
+(/sbin/mkswap /dev/sdb1 && /sbin/mkfs.ext4 -j /dev/sdb2)
 # create /netdisk
 echo "$DATE: adding spare disk to /etc/fstab"
-[[ ! -d /netdisk ]] && /usr/bin/sudo mkdir /netdisk
+[[ ! -d /netdisk ]] && mkdir -p /netdisk
 [[ -z $FSTAB ]] && \
-echo "/dev/sdb1       swap    swap    defaults,pri=200        0 0" | /usr/bin/sudo tee -a /etc/fstab && \
-echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | /usr/bin/sudo tee -a /etc/fstab
+echo "/dev/sdb1       swap    swap    defaults,pri=200        0 0" | tee -a /etc/fstab && \
+echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | tee -a /etc/fstab
 #
-/usr/bin/sudo /sbin/swapon -a
-/usr/bin/sudo /bin/mount -a
-(/usr/bin/sudo /bin/mkdir -p /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && /usr/bin/sudo /bin/chown $ME: /netdisk/cache /netdisk/work /netdisk/tahoe)
-[[ ! -L /var/lib/docker ]] && /usr/bin/sudo /bin/ln -s /netdisk/docker /var/lib/docker
+(/sbin/swapon -a && /bin/mount -a)
+(/bin/mkdir -p /netdisk/tmp /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && \
+   /bin/chmod 1777 /netdisk/tmp && \
+   /bin/mv /tmp /tmp.old;ln -s /netdisk/tmp /tmp && \
+   /bin/chown -hR 1001 /netdisk/cache /netdisk/work /netdisk/tahoe)
+[[ ! -L /var/lib/docker ]] && ( /bin/ln -s /netdisk/docker /var/lib/docker )
 #
 exit 0
