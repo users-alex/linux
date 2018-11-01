@@ -1,4 +1,4 @@
 ~/bin/setupSpareDisk
 ~/bin/setupServer
-~/bin/setupCache
 ~/bin/setupAccount
+~/bin/setupCache
