@@ -54,6 +54,8 @@ curl https://glide.sh/get | sh
 
 ```sh
  git config --global status.submoduleSummary true
+ git config filter.compress.clean gzip
+ git config filter.compress.smudge gzip -d
  ```
 
 
