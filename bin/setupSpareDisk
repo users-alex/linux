@@ -39,8 +39,6 @@ echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | tee -a /etc
 #
 (/sbin/swapon -a && /bin/mount -a)
 (/bin/mkdir -p /netdisk/tmp /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && \
-   /bin/chmod 1777 /netdisk/tmp && \
-   /bin/mv /tmp /tmp.old;ln -s /netdisk/tmp /tmp && \
    /bin/chown -hR 1001 /netdisk/cache /netdisk/work /netdisk/tahoe)
 [[ ! -L /var/lib/docker ]] && ( /bin/ln -s /netdisk/docker /var/lib/docker )
 #
