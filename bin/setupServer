@@ -9,7 +9,7 @@ ID=`id -nu`
 #
 # increase file handles
 #
-echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf
 echo "fs.file-max = 131072" | sudo tee /etc/sysctl.conf && sudo sysctl -p
 echo "session required        pam_unix.so" | sudo tee -a /etc/pam.d/common-session
 echo "session optional        pam_systemd.so" | sudo tee -a /etc/pam.d/common-session
@@ -55,7 +55,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   restic s3fs libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev \
   libusb-1.0-0-dev libudev-dev autoconf libpng-dev libssl-dev libasound2 libgmp3-dev \
   postgresql-client-common postgresql-client emacs libc++-dev virtualenv pixz zpaq \
-  php7.2-cli hhvm
+  php7.2-cli hhvm automake libtool
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
