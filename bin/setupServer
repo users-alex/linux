@@ -56,6 +56,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   libusb-1.0-0-dev libudev-dev autoconf libpng-dev libssl-dev libasound2 libgmp3-dev \
   postgresql-client-common postgresql-client emacs libc++-dev virtualenv pixz zpaq \
   php7.2-cli hhvm automake libtool
+sudo aptget install -y ffmpeg ffmpeg2theora ffmpegthumbnailer ffmpegthumbs ffmsindex
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
