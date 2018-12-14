@@ -47,7 +47,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update && sudo apt-get -y upgrade
 #sudo apt-get install -y cf-cli gcsfuse
 sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
-  libreadline6 libreadline6-dev libbz2-dev libprotobuf-dev \
+  libreadline6-dev libbz2-dev libprotobuf-dev \
   libreadline-dev bison apt-transport-https ca-certificates curl software-properties-common \
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
