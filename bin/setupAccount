@@ -36,6 +36,10 @@ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.s
 # install shell plug-ins
 curl https://raw.githubusercontent.com/rupa/z/master/z.sh > ~/.z.sh
 #
+# enable private github repo access for go get ...
+#
+git config --global url.git@github.com:.insteadOf https://github.com/
+#
 # install Applications
 #
 # \rm -rf ~/Applications;git clone https://github.com/users-alex/applications-linux.git ~/.cache/Applications;ln -s ~/.cache/Applications ~/Applications &
