@@ -55,7 +55,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   restic s3fs libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev \
   libusb-1.0-0-dev libudev-dev autoconf libpng-dev libssl-dev libasound2 libgmp3-dev \
   postgresql-client-common postgresql-client emacs libc++-dev virtualenv pixz zpaq \
-  php7.2-cli hhvm automake libtool ffmpeg ffmpeg2theora ffmpegthumbnailer ffmpegthumbs ffmsindex \
+  php7.2-cli automake libtool ffmpeg ffmpeg2theora ffmpegthumbnailer ffmpegthumbs ffmsindex \
   libattr1-dev xfslibs-dev binutils-dev binutils-multiarch-dev libbinutils fuse libfuse-dev \
   libncurses5 libncurses5-dev ncurses-base ncurses-bin ncurses-term libjsoncpp-dev libhiredis-dev
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
