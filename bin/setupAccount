@@ -49,5 +49,6 @@ git config --global url.git@github.com:.insteadOf https://github.com/
 #  install network emulator tool
 # (cd /tmp;git clone https://github.com/mininet/mininet.git;./mininet/util/install.sh -s ~/mininet -a ) &
 # tune for max RAM performance
-sudo echo "2000" > /proc/sys/vm/vfs_cache_pressure
-sudo echo "100" > /proc/sys/vm/dirty_ratio
+echo "2000" > sudo tee -a /proc/sys/vm/vfs_cache_pressure
+echo "100" > sudo tee -a /proc/sys/vm/dirty_ratio
+
