@@ -41,5 +41,6 @@ echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | tee -a /etc
 (/bin/mkdir -p /netdisk/tmp /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && \
    /bin/chown -hR 1001 /netdisk/cache /netdisk/work /netdisk/tahoe)
 [[ ! -L /var/lib/docker ]] && ( /bin/ln -s /netdisk/docker /var/lib/docker )
+[[ ! -d /netdisk/alex ]] && ( cd /home;tar cf - alex) | ( cd /netdisk;tar xpf - )
 #
 exit 0
