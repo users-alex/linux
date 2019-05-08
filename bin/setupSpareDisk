@@ -8,7 +8,7 @@ SPAREDISK=$(/sbin/fdisk -l |grep '/dev/sdb')
 FSTAB=$(/bin/grep sdb /etc/fstab)
 echo "$DATE: spare disk"
 # check fstab for sdb
-[[ ! -z $FSTAB ]] && exit 0
+#[[ ! -z $FSTAB ]] && exit 0
 # check if sdb is available
 [[ -z $SPAREDISK ]] && exit 0
 #
@@ -18,29 +18,32 @@ partdisk(){
 /sbin/sfdisk /dev/sdb <<PART_TABLE
 
 label: dos
-label-id: 0xd5f7e487
+label-id: 0x77d109bf
 device: /dev/sdb
 unit: sectors
 
-/dev/sdb1 : start=         256, size=     5242880, type=82
-/dev/sdb2 : start=     5243136, size=    93060864, type=83
+/dev/sdb1 : start=         256, size=     8388608, type=83
+/dev/sdb2 : start=     8388864, size=    44957568, type=83
+/dev/sdb3 : start=    53346560, size=    44957440, type=83
 
 PART_TABLE
 }
 echo "$DATE: building spare disk on /dev/sdb"
 partdisk
-(/sbin/mkswap /dev/sdb1 && /sbin/mkfs.ext4 -j /dev/sdb2)
+(/sbin/mkswap /dev/sdb1) && \
+(mkfs.xfs -f -L NETDISK -b size=4096 /dev/sdb2;mkfs.xfs -f -L CACHE -b size=4096 /dev/sdb3) 2>&1 > /dev/null
 # create /netdisk
 echo "$DATE: adding spare disk to /etc/fstab"
 [[ ! -d /netdisk ]] && mkdir -p /netdisk
 [[ -z $FSTAB ]] && \
-echo "/dev/sdb1       swap    swap    defaults,pri=200        0 0" | tee -a /etc/fstab && \
-echo "/dev/sdb2       /netdisk        auto  defaults,nofail   0 0" | tee -a /etc/fstab
+echo "/dev/sdb1       swap		swap	defaults,pri=200        0 0" | tee -a /etc/fstab && \
+echo "/dev/sdb2       /netdisk		auto	defaults,nofail   0 0" | tee -a /etc/fstab
+echo "/dev/sdb3       /cache		auto	defaults,nofail   0 0" | tee -a /etc/fstab
 #
 (/sbin/swapon -a && /bin/mount -a)
-(/bin/mkdir -p /netdisk/tmp /netdisk/docker /netdisk/cache /netdisk/work /netdisk/tahoe && \
-   /bin/chown -hR 1001 /netdisk/cache /netdisk/work /netdisk/tahoe)
-[[ ! -L /var/lib/docker ]] && ( /bin/ln -s /netdisk/docker /var/lib/docker )
+(/bin/mkdir -p /cache/tmp /cache/docker /cache/cache /cache/work /cache/tahoe && \
+   /bin/chown -hR 1001 /cache/cache /cache/work /cache/tahoe)
+[[ ! -L /var/lib/docker ]] && ( /bin/ln -s /cache/docker /var/lib/docker )
 [[ ! -d /netdisk/alex ]] && ( cd /home;tar cf - alex) | ( cd /netdisk;tar xpf - )
 #
 exit 0

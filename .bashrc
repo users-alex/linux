@@ -153,3 +153,5 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
+
+[[ -s "/netdisk/alex/.gvm/scripts/gvm" ]] && source "/netdisk/alex/.gvm/scripts/gvm"

@@ -70,4 +70,5 @@ alex2006hw
 .multirust
 .rustup/
 tahoe
+shared/
 .emacs.d
