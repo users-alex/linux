@@ -58,7 +58,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   php7.2-cli automake libtool ffmpeg ffmpeg2theora ffmpegthumbnailer ffmpegthumbs ffmsindex \
   libattr1-dev xfslibs-dev binutils-dev binutils-multiarch-dev libbinutils fuse libfuse-dev \
   libncurses5 libncurses5-dev ncurses-base ncurses-bin ncurses-term libjsoncpp-dev libhiredis-dev \
-  flex texinfo help2man libtool-bin imagemagick
+  flex texinfo help2man libtool-bin imagemagick dc
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 sudo pip install --upgrade pip
 sudo usermod -aG docker $(whoami)
