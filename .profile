@@ -19,12 +19,3 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
-# moved to .bashrc
-# set PATH so it includes user's private bin if it exists
-#if [ -d "$HOME/bin" ] ; then
-#    PATH="$HOME/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
-#fi
-export PATH="/home/u8513/.linuxbrew/bin:$PATH"
-export MANPATH="/home/u8513/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/u8513/.linuxbrew/share/info:$INFOPATH"

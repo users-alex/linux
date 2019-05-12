@@ -9,12 +9,12 @@
 #\rm -rf ~/.ccache;mkdir -p ~/.cache/ccache;ln -s ~/.cache/ccache ~/.ccache
 #\rm -rf ~/.bitmonero;mkdir -p ~/.cache/bitmonero;ln -s ~/.cache/bitmonero ~/.bitmonero
 # install gvm nvs
-#\rm -rf ~/.nvm;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash &
+\rm -rf ~/.nvm;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash &
 # install nvs
-export NVS_HOME="$HOME/.nvs"
-git clone https://github.com/jasongin/nvs "$NVS_HOME"
-. "$NVS_HOME/nvs.sh" install
-(. "$NVS_HOME/nvs.sh" && nvs add 8.11.4;nvs link 8.11.4;nvs use 8.11.4) &
+#export NVS_HOME="$HOME/.nvs"
+#git clone https://github.com/jasongin/nvs "$NVS_HOME"
+#. "$NVS_HOME/nvs.sh" install
+#(. "$NVS_HOME/nvs.sh" && nvs add 8.11.4;nvs link 8.11.4;nvs use 8.11.4) &
 # install gvm
 \rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 \rm -rf ~/.gvm/archive;mkdir -p ~/.cache/gvm/archive;ln -s ~/.cache/gvm/archive ~/.gvm/archive
