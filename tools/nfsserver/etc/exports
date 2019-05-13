@@ -11,5 +11,5 @@
 #/home 67.160.208.134(rw,sync,no_root_squash,no_subtree_check,anonuid=1001,anongid=1002) 10.0.0.0/8(rw,sync,no_root_squash,no_subtree_check)
 #/cache/nfs 67.160.208.134(rw,sync,no_subtree_check,anonuid=1001,anongid=1002) 10.0.0.0/8(rw,sync,no_subtree_check)
 #
-/cache		67.160.208.134(rw,fsid=0,no_root_squash,no_subtree_check,anonuid=1001,anongid=1002)
-/cache/nfs 	67.160.208.134(rw,no_subtree_check,anonuid=1001,anongid=1002)
+/cache		67.160.208.134(rw,fsid=0,sync,no_root_squash,no_subtree_check,anonuid=1001,anongid=1002)
+/cache/nfs 	67.160.208.134(rw,sync,no_subtree_check,anonuid=1001,anongid=1002)
