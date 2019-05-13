@@ -14,5 +14,5 @@
 - OSX
 ```
   sudo mkdir -p /netdisk
-  sudo mount -t nfs4 -o resvport,async,proto=tcp,rsize=65536,wsize=65536 dev01.bellbella.com:/cache/nfs /netdisk
+  sudo mount -t nfs -o resvport,async,rsize=65536,wsize=65536 dev01.bellbella.com:/ /netdisk
 ```
