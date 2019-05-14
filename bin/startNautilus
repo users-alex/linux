@@ -1,11 +1,10 @@
 ID=`/usr/bin/whoami`
 
-echo 'usage: ssh -L 8443:127.0.0.1:8443 -N -f -l joshjua dev.nautilustechnologies.io'
-echo '     : browse to http://localhost:8443'
-
 docker run -d \
   -p 127.0.0.1:8443:8443 \
-  -v /cache/shared/${ID}:/home/coder/project \
-  --user 1004:1004 \
+  -v /cache/nautilus/${ID}:/home/coder/project \
   alex2006hw/vsceditor:1.0.0 --allow-http --no-auth
 
+echo 'usage: ssh -L 8443:127.0.0.1:8443 -N -f -l joshjua dev.nautilustechnologies.io'
+echo '     : browse to http://localhost:8443'
+#  --user 1004:1004 \
