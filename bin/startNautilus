@@ -6,6 +6,6 @@ echo '     : browse to http://localhost:8443'
 docker run -d \
   -p 127.0.0.1:8443:8443 \
   -v /cache/shared/${ID}:/home/coder/project \
-  --user $(id -u):$(id -g) \
+  --user 1004:1004 \
   alex2006hw/vsceditor:1.0.0 --allow-http --no-auth
 
