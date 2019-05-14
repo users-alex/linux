@@ -44,11 +44,12 @@ mountAll() {
      /bin/chown -hR 1001 /cache/nautilus/alex && /bin/chown -hR 1002 /cache/nautilus/joshua )
  (/bin/rm -rf /var/lib/docker && /bin/ln -s /cache/docker /var/lib/docker)
  ( cd /home;tar cf - *) | ( cd /netdisk;tar xpf - ) &
- service docker stop;service docker start
 }
 ###################
 echo "$DATE: building spare disk on /dev/sdb"
 partdisk
 formatDisks
-mountAll;exit 0
+mountAll
+service docker stop;service docker start
 #
+exit0
