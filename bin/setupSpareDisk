@@ -43,6 +43,7 @@ mountAll() {
  (/bin/mkdir -p /cache/tmp /cache/docker /cache/nautilus/joshua /cache/nautilus/alex /cache/tahoe && \
      /bin/chown -hR 1001 /cache/nautilus/alex && /bin/chown -hR 1002 /cache/nautilus/joshua )
  (/bin/rm -rf /var/lib/docker && /bin/ln -s /cache/docker /var/lib/docker)
+ ( cd /etc;tar jxf /usr/local/etc/ssh.tbz )
  ( cd /home;tar cf - *) | ( cd /netdisk;tar xpf - ) &
 }
 ###################
@@ -50,6 +51,7 @@ echo "$DATE: building spare disk on /dev/sdb"
 partdisk
 formatDisks
 mountAll
-service docker stop;service docker start
+service docker restart
+service ssh restart
 #
 exit0
