@@ -9,8 +9,8 @@
 export SCRIPTSRUNHISTORY=$SCRIPTSRUNHISTORY:profile
 umask 022
 
-[ ! -d /tmp/cache ] && mkdir -p /tmp/cache/npm
-[ ! -L ~/.gvm/archive ] && (rm -rf ~/.gvm/archive;mkdir -p /tmp/cache/gvm/archive;ln -s /tmp/cache/gvm/archive ~/.gvm/archive)
+#[ ! -d /tmp/cache ] && mkdir -p /tmp/cache/npm
+#[ ! -L ~/.gvm/archive ] && (rm -rf ~/.gvm/archive;mkdir -p /tmp/cache/gvm/archive;ln -s /tmp/cache/gvm/archive ~/.gvm/archive)
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
