@@ -9,7 +9,9 @@
 #\rm -rf ~/.ccache;mkdir -p ~/.cache/ccache;ln -s ~/.cache/ccache ~/.ccache
 #\rm -rf ~/.bitmonero;mkdir -p ~/.cache/bitmonero;ln -s ~/.cache/bitmonero ~/.bitmonero
 # install gvm nvs
-\rm -rf ~/.nvm;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash &
+unset NVM_DIR
+\rm -rf ~/.nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash &
 # install nvs
 #export NVS_HOME="$HOME/.nvs"
 #git clone https://github.com/jasongin/nvs "$NVS_HOME"
