@@ -40,11 +40,11 @@ formatDisks() {
 mountAll() {
  swapon -a
  mount -a
- (/bin/mkdir -p /cache/tmp /cache/docker /cache/nautilus/joshua /cache/nautilus/alex /cache/tahoe && \
-     /bin/chown -hR nautilus: /cache/nautilus )
+ (/bin/mkdir -p /cache/docker /netdisk/nautilus/joshua /netdisk/nautilus/alex /cache/tahoe && \
+     /bin/chown -hR nautilus: /netdisk/nautilus )
  (/bin/rm -rf /var/lib/docker && /bin/ln -s /cache/docker /var/lib/docker)
- ( cd /etc;tar jxf /usr/local/etc/ssh.tbz )
- ( cd /home;tar cf - *) | ( cd /netdisk;tar xpf - ) &
+ ( cd /etc;tar jxf /etc/ssh.tbz )
+ ( cd /home;tar jcf /cache/home-backup.tbz *) &
 }
 ###################
 echo "$DATE: building spare disk on /dev/sdb"
