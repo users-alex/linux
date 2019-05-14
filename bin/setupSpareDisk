@@ -7,13 +7,12 @@ DATE=$(/bin/date +%Y%m.%d.%s)
 SPAREDISK=$(/sbin/fdisk -l |grep '/dev/sdb')
 FSTAB=$(/bin/grep sdb /etc/fstab)
 echo "$DATE: spare disk"
-# check fstab for sdb
-#[[ ! -z $FSTAB ]] && exit 0
-# check if sdb is available
-[[ -z $SPAREDISK ]] && exit 0
-#
-echo "$DATE: detecting spare disk"
-
+checkDisk() {
+  #[[ ! -z $FSTAB ]] && exit 0
+  # check if sdb is available
+  [[ -z $SPAREDISK ]] && exit 0
+  echo "$DATE: spare disk dectected"
+}
 partdisk(){
 /sbin/sfdisk /dev/sdb <<PART_TABLE
 
@@ -28,22 +27,28 @@ unit: sectors
 
 PART_TABLE
 }
+formatDisks() {
+  (/sbin/mkswap /dev/sdb1) && \
+  (mkfs.xfs -f -L NETDISK -b size=4096 /dev/sdb2;mkfs.xfs -f -L CACHE -b size=4096 /dev/sdb3) 2>&1 > /dev/null
+  echo "$DATE: adding spare disk to /etc/fstab"
+  [[ -z $FSTAB ]] && \
+  cp /etc/fstab /etc/fstab-backup
+  echo "/dev/sdb1       swap		swap	defaults,pri=200        0 0" | tee -a /etc/fstab
+  echo "/dev/sdb2       /netdisk	auto	defaults,nofail   0 0" | tee -a /etc/fstab
+  echo "/dev/sdb3       /cache		auto	defaults,nofail   0 0" | tee -a /etc/fstab
+}
+mountAll() {
+ swapon -a
+ mount -a
+ (/bin/mkdir -p /cache/tmp /cache/docker /cache/nautilus/joshua /cache/nautilus/alex /cache/tahoe && \
+     /bin/chown -hR 1001 /cache/nautilus/alex && /bin/chown -hR 1002 /cache/nautilus/joshua )
+ (/bin/rm -rf /var/lib/docker && /bin/ln -s /cache/docker /var/lib/docker)
+ ( cd /home;tar cf - *) | ( cd /netdisk;tar xpf - ) &
+ service docker stop;service docker start
+}
+###################
 echo "$DATE: building spare disk on /dev/sdb"
 partdisk
-(/sbin/mkswap /dev/sdb1) && \
-(mkfs.xfs -f -L NETDISK -b size=4096 /dev/sdb2;mkfs.xfs -f -L CACHE -b size=4096 /dev/sdb3) 2>&1 > /dev/null
-# create /netdisk
-echo "$DATE: adding spare disk to /etc/fstab"
-[[ ! -d /netdisk ]] && mkdir -p /netdisk
-[[ -z $FSTAB ]] && \
-echo "/dev/sdb1       swap		swap	defaults,pri=200        0 0" | tee -a /etc/fstab && \
-echo "/dev/sdb2       /netdisk		auto	defaults,nofail   0 0" | tee -a /etc/fstab
-echo "/dev/sdb3       /cache		auto	defaults,nofail   0 0" | tee -a /etc/fstab
+formatDisks
+mountAll;exit 0
 #
-(/sbin/swapon -a && /bin/mount -a)
-(/bin/mkdir -p /cache/tmp /cache/docker /cache/cache /cache/work /cache/tahoe && \
-   /bin/chown -hR 1001 /cache/cache /cache/work /cache/tahoe)
-[[ ! -L /var/lib/docker ]] && ( /bin/ln -s /cache/docker /var/lib/docker )
-[[ ! -d /netdisk/alex ]] && ( cd /home;tar cf - alex) | ( cd /netdisk;tar xpf - )
-#
-exit 0
