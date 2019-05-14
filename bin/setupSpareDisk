@@ -58,8 +58,8 @@ checkDisk
 partdisk
 formatDisks
 mountAll
+copyHome &
 service docker restart
 service ssh restart
-copyHome &
 #
 exit 0
