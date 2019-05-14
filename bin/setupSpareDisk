@@ -40,8 +40,8 @@ formatDisks() {
 mountAll() {
  swapon -a
  mount -a
- (/bin/mkdir -p /cache/docker /netdisk/nautilus/joshua /netdisk/nautilus/alex /cache/tahoe && \
-     /bin/chown -hR nautilus: /netdisk/nautilus )
+ (/bin/mkdir -p /cache/docker /netdisk/tahoe/joshua /netdisk/nautilus/joshua /netdisk/tahoe/alex /netdisk/nautilus/alex && \
+     /bin/chown -hR nautilus: /netdisk/nautilus /netdisk/tahoe )
  (/bin/rm -rf /var/lib/docker && /bin/ln -s /cache/docker /var/lib/docker)
  ( cd /etc;tar jxf /usr/local/etc/ssh.tbz )
  ( cd /home;tar jcf /cache/home-backup.tbz *) &
