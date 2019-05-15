@@ -76,3 +76,4 @@ shared/
 local
 nautilus
 project
+.vscode-remote/

@@ -19,3 +19,6 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
+if [ -f "$HOME/.ssh-find-agent.sh" ]; then
+  . "$HOME/.ssh-find-agent.sh"
+fi
