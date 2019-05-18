@@ -12,7 +12,7 @@ ID=`id -nu`
 echo 262144 | sudo tee -a /proc/sys/net/core/rmem_default
 echo 262144 | sudo tee -a /proc/sys/net/core/rmem_max
 echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conff && sudo sysctl -p
-echo "fs.file-max = 131072" | sudo tee /etc/sysctl.conf && sudo sysctl -p
+echo "fs.file-max = 131072" | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 echo "session required        pam_unix.so" | sudo tee -a /etc/pam.d/common-session
 echo "session optional        pam_systemd.so" | sudo tee -a /etc/pam.d/common-session
 echo "session required        pam_limits.so" | sudo tee -a /etc/pam.d/common-session
