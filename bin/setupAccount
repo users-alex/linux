@@ -20,7 +20,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash 
 # install gvm
 \rm -rf ~/.gvm;bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 \rm -rf ~/.gvm/archive;mkdir -p ~/.cache/gvm/archive;ln -s ~/.cache/gvm/archive ~/.gvm/archive
-(. "${HOME}/.gvm/scripts/gvm" && gvm install go1.11.1 -B && gvm alias delete latest;gvm alias create latest go1.11.1)
+(. "${HOME}/.gvm/scripts/gvm" && gvm install go1.12.5 -B && gvm alias delete latest;gvm alias create latest go1.12.5)
 # install xgo
 export GOROOT=~/go
 [ ! -d ${GOROOT} ] && mkdir -p ${GOROOT}
