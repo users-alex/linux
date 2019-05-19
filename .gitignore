@@ -78,3 +78,4 @@ nautilus
 project
 .vscode-remote/
 .pkg-cache
+.local/

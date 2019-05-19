@@ -1,0 +1,6 @@
+if grep -qs '/backup ' /proc/mounts; then
+    echo "------------:" $(date) ":------------"
+    /usr/bin/rsync -avz /home/* /backup
+else
+    exit 0
+fi
