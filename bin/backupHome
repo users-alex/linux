@@ -1,6 +1,12 @@
 if grep -qs '/backup ' /proc/mounts; then
+    LOCK=/tmp/backuphome.LCK
+    backup() {
+	/usr/bin/touch ${LOCK}
+	/usr/bin/rsync -avz --delete --exclude 'swapfile' /netdisk/* /backup
+	/bin/rm ${LOCK}
+    }
     echo "------------:" $(date) ":------------"
-    /usr/bin/rsync -avz /netdisk/home/* /backup
+    [ ! -f ${LOCK} ] && backup
 else
     exit 0
 fi

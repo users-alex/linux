@@ -50,8 +50,7 @@ mountAll() {
  ( cd /etc;tar jxf /usr/local/etc/ssh.tbz )
 }
 copyHome(){
- ( cd /data;tar cf - [aj]* ) | ( cd /netdisk/home;tar xpf - )
- ( cd /data;tar cf - project ) | ( cd /netdisk/home;tar xpf - ) &
+ ( cd /home;tar cf - * ) | ( cd /netdisk/home;tar xpf - )
  ( cp /usr/local/etc/passwd /etc/passwd;pwconv )
 }
 ###################
@@ -60,8 +59,8 @@ checkDisk
 partdisk
 formatDisks
 mountAll
-copyHome &
 service docker restart
 service ssh restart
+copyHome &
 #
 exit 0
