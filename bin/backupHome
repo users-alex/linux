@@ -4,6 +4,8 @@ if grep -qs '/backup ' /proc/mounts; then
 	/usr/bin/touch ${LOCK}
 	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/joshua /backup/
 	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/project/joshua /backup/project/
+	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/joshua /netdisk/home/
+	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/project/joshua /netdisk/home/project/
 	/bin/rm ${LOCK}
     }
     LOCKx=/tmp/backupalex.LCK
