@@ -12,7 +12,7 @@ if grep -qs '/backup ' /proc/mounts; then
     backupalex() {
 	/usr/bin/touch ${LOCKx}
 	/usr/bin/rsync -avz --delete --exclude 'swapfile' /netdisk/home/alex /backup/
-	/usr/bin/rsync -avz --delete --exclude 'swapfile' /netdisk/project/alex /backup/project/
+	/usr/bin/rsync -avz --delete --exclude 'swapfile' /netdisk/home/project/alex /backup/project/
 	/bin/rm ${LOCKx}
     }
     echo "------------:" $(date) ":------------"
