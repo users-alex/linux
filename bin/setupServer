@@ -8,7 +8,7 @@ ID=`id -nu`
 #sudo ln -s $HOME /home/webhome
 #
 # increase file handles
-#
+# 
 echo 262144 | sudo tee -a /proc/sys/net/core/rmem_default
 echo 262144 | sudo tee -a /proc/sys/net/core/rmem_max
 echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conff && sudo sysctl -p
@@ -69,10 +69,12 @@ sudo usermod -aG docker $(whoami)
 #
 # glances
 #
-sudo pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb \
+installGlances()
+{sudo pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb \
   elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard glances \
   tahoe-lafs
-sudo pip install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz
+sudo pip install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz}
+installGlances
 #
 # docker-compose
 #
