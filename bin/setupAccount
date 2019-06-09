@@ -25,6 +25,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash 
 export GOROOT=~/go
 [ ! -d ${GOROOT} ] && mkdir -p ${GOROOT}
 go get github.com/karalabe/xgo  # go cross compiler
+# install goxc
+go get github.com/laher/goxc
+goxc -bc "linux darwin" -arch "amd64" -t
 #wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
 #tar zxf go1.9.2.linux-amd64.tar.gz;\rm -rf go1.9.2.linux-amd64.tar.gz
 #
