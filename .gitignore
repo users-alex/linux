@@ -79,3 +79,14 @@ project
 .vscode-remote/
 .pkg-cache
 .local/
+.cache-local/
+.dts/
+.gluejs-cache/
+.hyperbahn-hosts.json
+.standard-v12-cache/
+.tcurlrc
+.vscode-server-insiders/
+.vscode-server-oss/
+.vscode/
+.xo-cache/
+snap/
