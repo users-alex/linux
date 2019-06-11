@@ -25,6 +25,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash 
 export GOROOT=~/go
 [ ! -d ${GOROOT} ] && mkdir -p ${GOROOT}
 go get github.com/karalabe/xgo  # go cross compiler
+curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $GOPATH/bin latest
 # install goxc
 go get github.com/laher/goxc
 goxc -bc "linux darwin" -arch "amd64" -t
