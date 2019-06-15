@@ -1,12 +1,13 @@
 # .bash_profile
 
+export PYENV_ROOT=/usr/local/pyenv
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
 # User specific environment and startup programs
-export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/bin:$PYENV_ROOT/bin:$PATH"
 
 eval "$(pyenv init -)"
