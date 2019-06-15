@@ -35,6 +35,7 @@ README-cloudshell.txt
 .gitconfig
 **/node_modules
 npm-debug.log*
+.yarnrc
 eval
 game
 Applications
@@ -89,4 +90,7 @@ project
 .vscode-server-oss/
 .vscode/
 .xo-cache/
+.glide/
+.pyenv/
+.semistandard-v13-cache/
 snap/
