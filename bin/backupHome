@@ -1,23 +1,13 @@
-if grep -qs '/backup ' /proc/mounts; then
-    LOCK=/tmp/backuphome.LCK
-    backup() {
-	/usr/bin/touch ${LOCK}
-	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/joshua /backup/
-	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/project/joshua /backup/project/
-	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/joshua /netdisk/home/
-	/usr/bin/rsync -avz --delete --exclude 'swapfile' 10.138.15.194:/netdisk/project/joshua /netdisk/home/project/
-	/bin/rm ${LOCK}
-    }
+if grep -qs '/backup/home ' /proc/mounts; then
     LOCKx=/tmp/backupalex.LCK
     backupalex() {
 	/usr/bin/touch ${LOCKx}
-	/usr/bin/rsync -avz --delete --exclude 'swapfile' /netdisk/home/alex /backup/
-	/usr/bin/rsync -avz --delete --exclude 'swapfile' /netdisk/home/project/alex /backup/project/
+	#/usr/bin/rsync -axzHAWXS --numeric-ids --info=progress2 --delete --exclude 'swapfile' /netdisk/ /backup/
+	#
+	/usr/bin/rsync -avxzHAWXS --numeric-ids --delete --exclude 'swapfile' /netdisk/ /backup/
 	/bin/rm ${LOCKx}
     }
     echo "------------:" $(date) ":------------"
-    echo '############# backup dev01 project ################'
-    [ ! -f ${LOCK} ] && backup
     echo '############# backup alex home ################'
     [ ! -f ${LOCKx} ] && backupalex
 fi

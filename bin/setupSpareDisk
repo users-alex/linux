@@ -41,16 +41,13 @@ formatDisks() {
 mountAll() {
  swapon -a
  mount -a
- (/bin/mkdir -p /cache/docker /netdisk/home /netdisk/tahoe /netdisk/nautilus \
-     /netdisk/tahoe/joshua /netdisk/nautilus/joshua /netdisk/tahoe/alex /netdisk/nautilus/alex && \
-     /bin/chown -hR joshua: /netdisk/nautilus/joshua /netdisk/tahoe/joshua && \
-     /bin/chown -hR alex: /netdisk/nautilus/alex /netdisk/tahoe/alex )
- /bin/chmod -R 777 /netdisk/nautilus
- (/bin/rm -rf /var/lib/docker && /bin/ln -s /cache/docker /var/lib/docker)
+ (/bin/mkdir -p /cache/docker && /bin/rm -rf /var/lib/docker && /bin/ln -s /cache/docker /var/lib/docker)
  ( cd /etc;tar jxf /usr/local/etc/ssh.tbz )
 }
 copyHome(){
+ mkdir -p /netdisk/home
  ( cd /home;tar cf - * ) | ( cd /netdisk/home;tar xpf - )
+ ( cd /data;tar cf - project ) | ( cd /netdisk/home;tar xpf - ) &
  ( cp /usr/local/etc/passwd /etc/passwd;pwconv )
 }
 ###################
