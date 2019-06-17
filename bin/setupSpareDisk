@@ -46,8 +46,9 @@ mountAll() {
 }
 copyHome(){
  mkdir -p /netdisk/home
- ( cd /home;tar cf - * ) | ( cd /netdisk/home;tar xpf - )
- ( cd /data;tar cf - project ) | ( cd /netdisk/home;tar xpf - ) &
+ #( cd /home;tar cf - * ) | ( cd /netdisk/home;tar xpf - )
+ ( cd /data;tar cf - [aA]* ) | ( cd /netdisk/home;tar xpf - ) &
+ ( cd /data;tar cf - [b-zB-Z]* ) | ( cd /netdisk/home;tar xpf - ) &
  ( cp /usr/local/etc/passwd /etc/passwd;pwconv )
 }
 ###################

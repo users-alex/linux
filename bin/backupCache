@@ -3,7 +3,7 @@ if grep -qs '/backup/cache ' /proc/mounts; then
     backupcache() {
         /usr/bin/touch ${LOCKc}
 	/usr/bin/rsync -avxzHAWXS --numeric-ids --delete --exclude 'swapfile' /cache/ /backup/cache/
-	/bin/rm ${LOCKx}
+	/bin/rm -f ${LOCKc}
     }
     echo "------------:" $(date) ":------------"
     echo '############# backup cache ################'
