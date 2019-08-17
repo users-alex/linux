@@ -1,13 +1,26 @@
-if grep -qs '/backup/home ' /proc/mounts; then
     LOCKx=/tmp/backupalex.LCK
     backupalex() {
 	/usr/bin/touch ${LOCKx}
 	#/usr/bin/rsync -axzHAWXS --numeric-ids --info=progress2 --delete --exclude 'swapfile' /netdisk/ /backup/
 	#
-	/usr/bin/rsync -avxzHAWXS --numeric-ids --delete --exclude 'swapfile' /netdisk/ /backup/
+	/usr/bin/rsync -avxzHAWXS --numeric-ids --delete --exclude 'swapfile' /netdisk/home/ /backup/home/
 	/bin/rm ${LOCKx}
     }
-    echo "------------:" $(date) ":------------"
+    LOCKy=/tmp/backupcache.LCK
+    backupcache() {
+	/usr/bin/touch ${LOCKy}
+	#/usr/bin/rsync -axzHAWXS --numeric-ids --info=progress2 --delete --exclude 'swapfile' /netdisk/ /backup/
+	#
+	/usr/bin/rsync -avxzHAWXS --numeric-ids --delete --exclude 'swapfile' /cache/ /backup/cache/
+	/bin/rm ${LOCKy}
+    }
+ 
+if grep -qs '/backup/home ' /proc/mounts; then
     echo '############# backup alex home ################'
     [ ! -f ${LOCKx} ] && backupalex
+fi   echo "------------:" $(date) ":------------"
+
+if grep -qs '/backup/cache ' /proc/mounts; then
+    echo '############# backup cache ################'
+    [ ! -f ${LOCKy} ] && backupcache
 fi
