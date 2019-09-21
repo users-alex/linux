@@ -47,13 +47,13 @@ ID=`id -nu`
 #sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 #echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 #
-sudo apt-get update && sudo apt-get -y upgrade
+#sudo apt-get update && sudo apt-get -y upgrade
 #sudo apt-get install -y cf-cli gcsfuse
 sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3-pip \
   libreadline6-dev libbz2-dev libprotobuf-dev sqlite3 \
-  apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libbsd-dev libedit-dev \ 
-libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git \
+  make build-essential libssl-dev zlib1g-dev libbz2-dev \
+  libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libbsd-dev libedit-dev \
+  xz-utils tk-dev libffi-dev liblzma-dev python-openssl git \
   bison apt-transport-https ca-certificates curl software-properties-common \
   spell ispell pandoc python-pip build-essential python-dev lm-sensors libnotify-bin ccache libevent-dev \
   fail2ban bison zip unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev libffi-dev \
