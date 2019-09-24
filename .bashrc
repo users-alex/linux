@@ -127,7 +127,7 @@ if [ -f "$HOME/.bash_env" ]; then
 fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-   PATH="$HOME/bin:$HOME/.linuxbrew/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
+   PATH="$HOME/bin:$HOME/.local/bin:$HOME/.linuxbrew/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 export NVM_DIR="$HOME/.nvm"
