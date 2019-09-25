@@ -85,8 +85,8 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
 #
 pip install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz
 pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb \
-  elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard glances \
-  tahoe-lafs
+  elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard tahoe-lafs
+pip3 install glances
 #
 # docker-compose
 #
