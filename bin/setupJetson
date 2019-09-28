@@ -69,7 +69,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
 sudo apt install -yq zsync burp bzrtools casync duplicity flamethrower inosync iwatch librsync-dev \
   lsyncd rclone rsbackup rsbackup-graph rsnapshot distcc* ccache distccmon-gnome mesa-utils libva-glx2 \
   libfdk-aac1 libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev libavresample-dev \
-  libavutil-dev libswresample-dev libswscale-dev libcurl4-openssl-dev python-pyaudio python3-pyaudio sox \
+  libavutil-dev libswresample-dev libswscale-dev python-pyaudio python3-pyaudio sox \
   xrdp-pulseaudio-installer libpulse-dev libvlc-dev libxcb-xinput-dev libxcb-xinerama0-dev libx264-dev \
   libv4l-dev libmbedtls-dev libqt5svg5-dev libqt5x11extras5-dev livestreamer cstream smcroute \
   libnl-route-3-dev libnl-utils libwebkitgtk-3.0-dev libcurl4-doc libidn11-dev libldap2-dev libnss3-dev \
