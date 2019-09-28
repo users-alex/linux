@@ -71,7 +71,7 @@ sudo apt install -yq zsync burp bzrtools casync duplicity flamethrower inosync i
   libfdk-aac1 libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev libavresample-dev \
   libavutil-dev libswresample-dev libswscale-dev libcurl4-openssl-dev python-pyaudio python3-pyaudio sox \
   xrdp-pulseaudio-installer libpulse-dev libvlc-dev libxcb-xinput-dev libxcb-xinerama0-dev libx264-dev \
-  libv4l-dev libmbedtls-dev libqt5svg5-dev libqt5x11extras5-dev
+  libv4l-dev libmbedtls-dev libqt5svg5-dev libqt5x11extras5-dev livestreamer cstream smcroute
 
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 #sudo pip install --upgrade pip
