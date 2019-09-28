@@ -72,7 +72,11 @@ sudo apt install -yq zsync burp bzrtools casync duplicity flamethrower inosync i
   libavutil-dev libswresample-dev libswscale-dev libcurl4-openssl-dev python-pyaudio python3-pyaudio sox \
   xrdp-pulseaudio-installer libpulse-dev libvlc-dev libxcb-xinput-dev libxcb-xinerama0-dev libx264-dev \
   libv4l-dev libmbedtls-dev libqt5svg5-dev libqt5x11extras5-dev livestreamer cstream smcroute \
-  libnl-route-3-dev libnl-utils
+  libnl-route-3-dev libnl-utils libwebkitgtk-3.0-dev libcurl4-doc libidn11-dev libldap2-dev libnss3-dev \
+  librtmp-dev libssh2-1-dev libcurl3-nss libcurl4-nss-dev apt-get install gstreamer1.0-tools gstreamer1.0-alsa \
+  gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \   
+  gstreamer1.0-libav libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev \   
+  libgstreamer-plugins-bad1.0-dev
 
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 #sudo pip install --upgrade pip
