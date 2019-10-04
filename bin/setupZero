@@ -66,7 +66,7 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
   libncurses5 libncurses5-dev ncurses-base ncurses-bin ncurses-term libjsoncpp-dev libhiredis-dev \
   flex texinfo help2man libtool-bin imagemagick dc iptables-persistent netfilter-persistent \
   nfs-kernel-server jq dstat lsof nmon iptraf iftop lsof atop exfat-fuse exfat-utils \
-  cmake distcc cmake-data librhash0 ccontrol distccmon-gnome dmucs
+  cmake distcc cmake-data librhash0 ccontrol distccmon-gnome dmucs tahoe-lafs
 #sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib mono-complete mono-devel
 #sudo pip install --upgrade pip
 #sudo usermod -aG docker $(whoami)
@@ -84,10 +84,9 @@ sudo apt-get install -y apt-utils screen htop sysstat nmap zsh wamerican python3
 #
 # glances
 #
-pip install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz
-pip install psutil logutils bottle batinfo zeroconf netifaces pymdstat influxdb \
-  elasticsearch potsdb statsd pystache docker-py pysnmp pika py-cpuinfo bernhard tahoe-lafs
-pip3 install glances
+pip3 install https://bitbucket.org/gleb_zhulik/py3sensors/get/tip.tar.gz psutil logutils bottle batinfo \
+	zeroconf netifaces pymdstat influxdb elasticsearch potsdb statsd pystache docker-py pysnmp pika \
+	py-cpuinfo bernhard glances
 #
 # docker-compose
 #
