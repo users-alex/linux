@@ -7,7 +7,7 @@ docker run -d -p 8901:5901 -p 6901:6901 \
   -v /etc/passwd:/etc/passwd \
   -v /etc/shadow:/etc/shadow \
   -v /etc/group:/etc/group \
-  alex2006hw/vnc:1.0.0 &
+  alex2006hw/vnc:arm64 &
 #  consol/ubuntu-xfce-vnc &
 #
 # slimmer version:
