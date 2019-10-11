@@ -1,6 +1,6 @@
 # .bash_profile
 
-export PYENV_ROOT=/usr/local/pyenv
+#export PYENV_ROOT=/usr/local/pyenv
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
@@ -8,9 +8,9 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-export PATH="$HOME/bin:$PYENV_ROOT/bin:$PATH"
+#export PATH="$HOME/bin:$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 #[ -f /glob/development-tools/parallel-studio/bin/compilervars.sh ] && source /glob/development-tools/parallel-studio/bin/compilervars.sh intel64
 #export INTEL_LICENSE_FILE=/usr/local/licenseserver/psxe.lic
