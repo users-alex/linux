@@ -94,3 +94,5 @@ project
 .pyenv/
 .semistandard-v13-cache/
 snap/
+.node_path
+.vsliveshare/
